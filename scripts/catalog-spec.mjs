@@ -103,3 +103,180 @@ export function createCatalogDefinitions() {
 export function genreNames(type) {
   return Object.fromEntries((type === 'movie' ? MOVIE_GENRES : SERIES_GENRES).map(g => [g.id, g.name]));
 }
+
+export const ALL_LANGUAGES = [
+  ...LANGUAGES,
+  { code: 'hi', name: 'Hindi', nativeName: 'हिन्दी', emoji: '🟡' }
+];
+
+export const OTT_PROVIDERS = [
+  { id: 8, key: 'netflix', name: 'Netflix', color: '#E50914' },
+  { id: 119, key: 'prime', name: 'Prime Video', color: '#00A8E1' },
+  { id: 122, key: 'hotstar', name: 'Disney+ Hotstar', color: '#13357B' },
+  { id: 232, key: 'zee5', name: 'Zee5', color: '#7B2CBF' },
+  { id: 237, key: 'sonyliv', name: 'Sony LIV', color: '#FF4500' },
+  { id: 220, key: 'jiocinema', name: 'JioCinema', color: '#D80064' },
+  { id: 532, key: 'aha', name: 'Aha', color: '#FF4D00' },
+  { id: 309, key: 'sunnxt', name: 'Sun NXT', color: '#FDB813' }
+];
+
+export function parseConfig(input) {
+  if (!input) return {};
+  let query = {};
+  if (typeof input === 'object') {
+    query = input;
+  } else if (typeof input === 'string') {
+    const trimmed = decodeURIComponent(input.trim());
+    if (!trimmed) return {};
+
+    if (trimmed.startsWith('c=')) {
+      try {
+        const decoded = Buffer.from(trimmed.slice(2), 'base64').toString('utf8');
+        return JSON.parse(decoded);
+      } catch {}
+    } else if (trimmed.startsWith('{') && trimmed.endsWith('}')) {
+      try {
+        return JSON.parse(trimmed);
+      } catch {}
+    }
+
+    const normalized = trimmed.replace(/[;|]/g, '&');
+    const params = new URLSearchParams(normalized);
+    for (const [k, v] of params.entries()) {
+      query[k.toLowerCase()] = v;
+    }
+  }
+
+  const result = {};
+
+  const langVal = query.lang || query.languages;
+  if (langVal && langVal !== 'all') {
+    const rawList = langVal.split(',').map(s => s.trim().toLowerCase()).filter(Boolean);
+    const codes = new Set();
+    const nameToCode = {
+      tamil: 'ta', ta: 'ta',
+      telugu: 'te', te: 'te',
+      malayalam: 'ml', ml: 'ml',
+      kannada: 'kn', kn: 'kn',
+      hindi: 'hi', hi: 'hi'
+    };
+    for (const item of rawList) {
+      if (nameToCode[item]) codes.add(nameToCode[item]);
+    }
+    if (codes.size > 0) result.languages = Array.from(codes);
+  }
+
+  const typeVal = query.type || query.types;
+  if (typeVal && typeVal !== 'all') {
+    const types = typeVal.split(',').map(s => s.trim().toLowerCase()).filter(s => s === 'movie' || s === 'series');
+    if (types.length > 0) result.types = types;
+  }
+
+  const catVal = query.category || query.categories || query.cats;
+  if (catVal && catVal !== 'all') {
+    const cats = catVal.split(',').map(s => s.trim().toLowerCase()).filter(Boolean);
+    if (cats.length > 0) result.categories = cats;
+  }
+
+  const genreVal = query.genre || query.genres;
+  if (genreVal && genreVal !== 'all') {
+    const rawGenres = genreVal.split(',').map(s => s.trim().toLowerCase()).filter(Boolean);
+    const genreIds = [];
+    for (const g of rawGenres) {
+      const num = Number(g);
+      if (Number.isFinite(num) && num > 0) {
+        genreIds.push(num);
+      } else {
+        const match = [...MOVIE_GENRES, ...SERIES_GENRES].find(item => item.name.toLowerCase() === g);
+        if (match) genreIds.push(match.id);
+      }
+    }
+    if (genreIds.length > 0) result.genres = Array.from(new Set(genreIds));
+  }
+
+  const ottVal = query.ott || query.providers || query.provider || query.watch;
+  if (ottVal && ottVal !== 'all' && ottVal !== 'none') {
+    const rawOtt = ottVal.split(',').map(s => s.trim().toLowerCase()).filter(Boolean);
+    const providerIds = [];
+    const keyToId = Object.fromEntries(OTT_PROVIDERS.map(p => [p.key, p.id]));
+    for (const item of rawOtt) {
+      const num = Number(item);
+      if (Number.isFinite(num) && num > 0) {
+        providerIds.push(num);
+      } else if (keyToId[item]) {
+        providerIds.push(keyToId[item]);
+      }
+    }
+    if (providerIds.length > 0) result.providers = Array.from(new Set(providerIds));
+  }
+
+  return result;
+}
+
+export function createFilteredCatalogDefinitions(config = {}) {
+  const hasLang = Array.isArray(config.languages) && config.languages.length > 0;
+  const hasTypes = Array.isArray(config.types) && config.types.length > 0;
+  const hasCats = Array.isArray(config.categories) && config.categories.length > 0;
+  const hasGenres = Array.isArray(config.genres) && config.genres.length > 0;
+
+  if (!hasLang && !hasTypes && !hasCats && !hasGenres) {
+    return createCatalogDefinitions();
+  }
+
+  const selectedLangs = hasLang
+    ? ALL_LANGUAGES.filter(l => config.languages.includes(l.code))
+    : LANGUAGES;
+
+  const selectedTypes = hasTypes ? config.types : ['movie', 'series'];
+  const definitions = [];
+
+  for (const language of selectedLangs) {
+    for (const type of selectedTypes) {
+      const typeInfo = TYPE_INFO[type];
+      if (!typeInfo) continue;
+
+      const categoriesToCheck = hasCats
+        ? ['popular', 'top_rated', 'new'].filter(c => config.categories.includes(c))
+        : ['popular', 'top_rated', 'new'];
+
+      for (const category of categoriesToCheck) {
+        const categoryName = {
+          popular: 'Popular',
+          top_rated: 'Top Rated',
+          new: 'Latest'
+        }[category];
+        definitions.push({
+          id: catalogId(type, language.code, category),
+          type,
+          mediaKey: typeInfo.mediaKey,
+          language,
+          category,
+          genre: null,
+          title: `${language.name} · ${categoryName} ${typeInfo.plural}`,
+          dateField: typeInfo.dateField
+        });
+      }
+
+      if (!hasCats || config.categories.includes('genre')) {
+        const genres = type === 'movie' ? MOVIE_GENRES : SERIES_GENRES;
+        for (const genre of genres) {
+          if (hasGenres && !config.genres.includes(genre.id)) {
+            continue;
+          }
+          definitions.push({
+            id: catalogId(type, language.code, 'genre', genre.id),
+            type,
+            mediaKey: typeInfo.mediaKey,
+            language,
+            category: 'genre',
+            genre,
+            title: `${language.name} · ${genre.name} ${typeInfo.plural}`,
+            dateField: typeInfo.dateField
+          });
+        }
+      }
+    }
+  }
+  return definitions;
+}
+

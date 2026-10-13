@@ -2,24 +2,1469 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Nuvio Regional Catalog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nuvio Regional Catalog · Add-on Configurator</title>
+  <meta name="description" content="Personalize your regional discovery experience for Nuvio and Stremio. Filter by language, genre, and streaming service.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    :root{color-scheme:dark;font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:#0b1020;color:#f3f4f6}
-    body{max-width:760px;margin:10vh auto;padding:24px;line-height:1.6}
-    h1{font-size:clamp(2rem,5vw,3.5rem);line-height:1.1;margin-bottom:.5rem}
-    p{color:#b7c0d2}a{color:#e9bd68}code{overflow-wrap:anywhere;background:#171f35;padding:.2rem .4rem;border-radius:6px}
-    .panel{padding:20px;border:1px solid #29334c;border-radius:16px;background:#11182a}
+    :root {
+      --bg: #070b14;
+      --bg-card: rgba(15, 23, 42, 0.75);
+      --bg-card-hover: rgba(30, 41, 59, 0.85);
+      --border: rgba(255, 255, 255, 0.08);
+      --border-active: rgba(245, 158, 11, 0.5);
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --primary: #f59e0b;
+      --primary-hover: #d97706;
+      --primary-glow: rgba(245, 158, 11, 0.25);
+      --accent-cyan: #06b6d4;
+      --accent-purple: #8b5cf6;
+      --success: #10b981;
+      --radius: 16px;
+      --radius-sm: 10px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: radial-gradient(circle at 50% 0%, #151e36 0%, #070b14 70%);
+      color: var(--text);
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      min-height: 100vh;
+      padding: 32px 20px 80px;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 1160px;
+      margin: 0 auto;
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      margin-bottom: 36px;
+    }
+
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      border-radius: 9999px;
+      background: rgba(245, 158, 11, 0.12);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      color: var(--primary);
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .badge-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--primary);
+      box-shadow: 0 0 10px var(--primary);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.85); }
+    }
+
+    h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      margin-bottom: 12px;
+      background: linear-gradient(135deg, #ffffff 30%, #fcd34d 70%, #f59e0b 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+      color: var(--text-muted);
+      font-size: clamp(1rem, 2vw, 1.15rem);
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    /* Host Mode Bar */
+    .host-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 10px 16px;
+      margin-bottom: 28px;
+      font-size: 0.86rem;
+    }
+
+    .host-bar-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .host-tag {
+      background: rgba(16, 185, 129, 0.15);
+      color: var(--success);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      padding: 2px 8px;
+      border-radius: 6px;
+      font-size: 0.76rem;
+      font-weight: 700;
+    }
+
+    .host-switcher {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .host-btn {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 5px 12px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .host-btn.active {
+      background: rgba(245, 158, 11, 0.15);
+      border-color: var(--primary);
+      color: #fff;
+      font-weight: 600;
+    }
+
+    /* Layout Grid */
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 28px;
+      align-items: start;
+    }
+
+    @media (max-width: 960px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Cards */
+    .card {
+      background: var(--bg-card);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      margin-bottom: 24px;
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+      transition: border-color 0.2s ease;
+    }
+
+    .card:hover {
+      border-color: rgba(255, 255, 255, 0.15);
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    .card-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.22rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .card-title span.icon {
+      font-size: 1.3rem;
+    }
+
+    .card-desc {
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      margin-top: -8px;
+      margin-bottom: 16px;
+    }
+
+    .btn-quick {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.78rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-quick:hover {
+      background: rgba(255, 255, 255, 0.12);
+      color: #fff;
+    }
+
+    /* Language Selection Tiles */
+    .languages-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      gap: 12px;
+    }
+
+    .select-tile {
+      position: relative;
+      background: rgba(15, 23, 42, 0.5);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 14px 12px;
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .select-tile:hover {
+      background: var(--bg-card-hover);
+      border-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+    }
+
+    .select-tile input[type="checkbox"] {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      accent-color: var(--primary);
+      width: 16px;
+      height: 16px;
+      cursor: pointer;
+    }
+
+    .select-tile.active {
+      background: rgba(245, 158, 11, 0.09);
+      border-color: var(--primary);
+      box-shadow: 0 0 15px var(--primary-glow);
+    }
+
+    .tile-emoji {
+      font-size: 1.8rem;
+      margin-bottom: 6px;
+    }
+
+    .tile-name {
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .tile-native {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    /* OTT Platform Badges */
+    .ott-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      gap: 10px;
+    }
+
+    .ott-pill {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 12px;
+      background: rgba(15, 23, 42, 0.5);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      user-select: none;
+      font-size: 0.86rem;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+
+    .ott-pill:hover {
+      background: var(--bg-card-hover);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .ott-pill.active {
+      border-color: var(--accent-cyan);
+      background: rgba(6, 182, 212, 0.12);
+      box-shadow: 0 0 12px rgba(6, 182, 212, 0.25);
+    }
+
+    .ott-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* Genres Chips */
+    .genre-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .genre-chip {
+      padding: 7px 14px;
+      border-radius: 9999px;
+      background: rgba(15, 23, 42, 0.5);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.84rem;
+      font-weight: 500;
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.2s;
+    }
+
+    .genre-chip:hover {
+      background: var(--bg-card-hover);
+      color: #fff;
+    }
+
+    .genre-chip.active {
+      background: rgba(139, 92, 246, 0.16);
+      border-color: var(--accent-purple);
+      color: #ede9fe;
+      font-weight: 600;
+    }
+
+    /* Options / Toggles */
+    .options-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .option-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.92rem;
+      color: #e2e8f0;
+      cursor: pointer;
+    }
+
+    .option-item input[type="checkbox"] {
+      accent-color: var(--primary);
+      width: 18px;
+      height: 18px;
+      cursor: pointer;
+    }
+
+    /* Sticky Output Panel */
+    .sidebar-sticky {
+      position: sticky;
+      top: 24px;
+    }
+
+    .output-card {
+      background: linear-gradient(145deg, rgba(20, 30, 55, 0.9), rgba(11, 17, 32, 0.9));
+      border: 1px solid rgba(245, 158, 11, 0.35);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7), 0 0 30px rgba(245, 158, 11, 0.08);
+    }
+
+    .counter-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      color: var(--success);
+      border-radius: 8px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .matched-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 3px 8px;
+      background: rgba(6, 182, 212, 0.15);
+      border: 1px solid rgba(6, 182, 212, 0.3);
+      color: var(--accent-cyan);
+      border-radius: 6px;
+      font-size: 0.74rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .url-box-label {
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .url-input-container {
+      position: relative;
+      margin-bottom: 18px;
+    }
+
+    .url-input {
+      width: 100%;
+      background: #090e1a;
+      border: 1px solid #1e293b;
+      border-radius: var(--radius-sm);
+      color: #fcd34d;
+      font-family: monospace;
+      font-size: 0.82rem;
+      padding: 12px 14px;
+      overflow-x: auto;
+      white-space: nowrap;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .url-input:focus {
+      border-color: var(--primary);
+    }
+
+    /* Buttons */
+    .btn-main {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 13px 20px;
+      border-radius: var(--radius-sm);
+      font-weight: 700;
+      font-size: 0.98rem;
+      cursor: pointer;
+      text-decoration: none;
+      border: none;
+      transition: all 0.2s ease;
+      margin-bottom: 10px;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      color: #070b14;
+      box-shadow: 0 4px 18px rgba(245, 158, 11, 0.35);
+    }
+
+    .btn-primary:hover {
+      background: linear-gradient(135deg, #fbbf24, #f59e0b);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(245, 158, 11, 0.45);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.08);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.15);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text-muted);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 0.86rem;
+      padding: 10px 14px;
+    }
+
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.05);
+      color: #fff;
+    }
+
+    /* Toast Notification */
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #10b981;
+      color: #052e16;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-weight: 700;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transform: translateY(100px);
+      opacity: 0;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 999;
+    }
+
+    .toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    /* Preset Direct Links Directory */
+    .presets-section {
+      margin-top: 48px;
+    }
+
+    .presets-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .presets-desc {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 24px;
+    }
+
+    .presets-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 16px;
+    }
+
+    .preset-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 18px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 14px;
+      transition: all 0.2s ease;
+    }
+
+    .preset-card:hover {
+      border-color: rgba(245, 158, 11, 0.4);
+      background: var(--bg-card-hover);
+      transform: translateY(-2px);
+    }
+
+    .preset-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .preset-name {
+      font-weight: 700;
+      font-size: 1.05rem;
+    }
+
+    .preset-count {
+      background: rgba(245, 158, 11, 0.12);
+      color: var(--primary);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      padding: 2px 8px;
+      border-radius: 6px;
+      font-size: 0.74rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .preset-desc {
+      color: var(--text-muted);
+      font-size: 0.84rem;
+      line-height: 1.4;
+    }
+
+    .preset-url {
+      font-family: monospace;
+      font-size: 0.78rem;
+      color: #fcd34d;
+      background: #090e1a;
+      padding: 6px 10px;
+      border-radius: 6px;
+      border: 1px solid #1e293b;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+
+    .preset-actions {
+      display: flex;
+      gap: 8px;
+    }
+
+    .preset-btn {
+      flex: 1;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.05);
+      color: #fff;
+      text-align: center;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .preset-btn:hover {
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    .preset-btn.btn-hl {
+      background: rgba(245, 158, 11, 0.15);
+      border-color: var(--primary);
+      color: #fcd34d;
+    }
+
+    .preset-btn.btn-hl:hover {
+      background: var(--primary);
+      color: #070b14;
+    }
+
+    /* Guide Section */
+    .guide-card {
+      background: rgba(15, 23, 42, 0.5);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      margin-top: 24px;
+    }
+
+    .guide-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 14px;
+    }
+
+    .step-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .step-num {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: rgba(245, 158, 11, 0.15);
+      border: 1px solid var(--primary);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.84rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .step-text h4 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+
+    .step-text p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 60px;
+      color: var(--text-muted);
+      font-size: 0.84rem;
+    }
+
+    footer a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
-  <h1>Nuvio Regional Catalog</h1>
-  <p>Regional movie and series discovery for Tamil, Telugu, Malayalam and Kannada.</p>
-  <div class="panel">
-    <p><strong>Addon manifest</strong><br><code>/manifest.json</code></p>
-    <p><strong>Collections file</strong><br><code>/collections.json</code></p>
-    <p>Install the manifest URL in Nuvio Add-ons. Import the collections JSON separately through your Nuvio account.</p>
+
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <div class="badge-pill">
+        <span class="badge-dot"></span>
+        Nuvio & Stremio Add-on
+      </div>
+      <h1>Nuvio Regional Catalog</h1>
+      <p class="subtitle">Customize your Indian regional movies and TV series discovery. Select languages, favorite genres, and streaming subscriptions to generate your tailored add-on link.</p>
+    </header>
+
+    <!-- Host Navigation Bar -->
+    <div class="host-bar">
+      <div class="host-bar-left">
+        <span class="host-tag">CDN Ready</span>
+        <span>Hosted at: <strong id="current-host-display" style="color: #fcd34d;">https://rohithselvaraj.github.io/Nuvio-Regional-Catalog/</strong></span>
+      </div>
+      <div class="host-switcher">
+        <span>Base Host:</span>
+        <button type="button" class="host-btn active" id="btn-host-gh">GitHub Pages</button>
+        <button type="button" class="host-btn" id="btn-host-custom">Live / Local</button>
+      </div>
+    </div>
+
+    <!-- Main Config Grid -->
+    <div class="grid">
+      <!-- Left Column: Controls -->
+      <div class="controls-col">
+
+        <!-- 1. Languages -->
+        <div class="card" id="card-languages">
+          <div class="card-header">
+            <h2 class="card-title"><span class="icon">🌐</span> Select Regional Languages</h2>
+            <div class="btn-group">
+              <button class="btn-quick" id="btn-lang-all">Select All</button>
+              <button class="btn-quick" id="btn-lang-default">Default (4)</button>
+            </div>
+          </div>
+          <p class="card-desc">Catalogs will be generated for each chosen language with Movies and TV Series.</p>
+          <div class="languages-grid" id="languages-container">
+            <!-- Dynamic language tiles -->
+          </div>
+        </div>
+
+        <!-- 2. OTT Platforms -->
+        <div class="card" id="card-ott">
+          <div class="card-header">
+            <h2 class="card-title"><span class="icon">📺</span> OTT Streaming Platforms</h2>
+            <div class="btn-group">
+              <button class="btn-quick" id="btn-ott-clear">Any / All</button>
+            </div>
+          </div>
+          <p class="card-desc">Optional: Filter catalog results to only include titles streaming on your subscriptions in India.</p>
+          <div class="ott-grid" id="ott-container">
+            <!-- Dynamic OTT pills -->
+          </div>
+        </div>
+
+        <!-- 3. Content Types & Shelves -->
+        <div class="card" id="card-types">
+          <div class="card-header">
+            <h2 class="card-title"><span class="icon">📂</span> Types & Shelves</h2>
+          </div>
+          <p class="card-desc">Choose which sections to include in your catalog shelves.</p>
+          <div class="options-row" style="margin-bottom: 16px;">
+            <label class="option-item">
+              <input type="checkbox" id="chk-type-movie" checked> Movies
+            </label>
+            <label class="option-item">
+              <input type="checkbox" id="chk-type-series" checked> TV Series
+            </label>
+          </div>
+          <div class="options-row">
+            <label class="option-item">
+              <input type="checkbox" id="chk-cat-popular" checked> 🔥 Popular
+            </label>
+            <label class="option-item">
+              <input type="checkbox" id="chk-cat-top_rated" checked> ⭐ Top Rated
+            </label>
+            <label class="option-item">
+              <input type="checkbox" id="chk-cat-new" checked> ⚡ Latest Releases
+            </label>
+            <label class="option-item">
+              <input type="checkbox" id="chk-cat-genre" checked> 🎭 Genre Shelves
+            </label>
+          </div>
+        </div>
+
+        <!-- 4. Genres -->
+        <div class="card" id="card-genres">
+          <div class="card-header">
+            <h2 class="card-title"><span class="icon">🎭</span> Genre Filters</h2>
+            <div class="btn-group">
+              <button class="btn-quick" id="btn-genres-all">All Genres</button>
+              <button class="btn-quick" id="btn-genres-popular">Popular Only</button>
+            </div>
+          </div>
+          <p class="card-desc">Select which genre catalogs to display in Nuvio.</p>
+          <div class="genre-chips" id="genres-container">
+            <!-- Dynamic genre chips -->
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right Column: Sidebar Output -->
+      <div class="sidebar-col">
+        <div class="sidebar-sticky">
+
+          <div class="output-card">
+            <div class="counter-badge" id="catalog-counter-badge">
+              ⚡ 160 Catalogs Included
+            </div>
+
+            <div class="url-box-label">
+              <span>Dynamic Manifest URL</span>
+              <span id="matched-status-badge" class="matched-badge">Static Match</span>
+            </div>
+
+            <div class="url-input-container">
+              <input type="text" id="manifest-url-input" class="url-input" readonly value="">
+            </div>
+
+            <a href="#" id="btn-install" class="btn-main btn-primary">
+              🚀 Install Addon in Nuvio
+            </a>
+
+            <button type="button" id="btn-copy" class="btn-main btn-secondary">
+              📋 Copy Manifest URL
+            </button>
+
+            <a href="#" id="btn-preview" target="_blank" class="btn-main btn-outline">
+              🔍 Open Manifest JSON
+            </a>
+
+            <a href="collections.json" id="btn-collections" download="collections.json" class="btn-main btn-outline" style="margin-top: 4px;">
+              📁 Download collections.json
+            </a>
+          </div>
+
+          <!-- Quick Setup Guide -->
+          <div class="guide-card">
+            <h3 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 4px;">How to install in Nuvio</h3>
+            <div class="guide-steps">
+              <div class="step-item">
+                <div class="step-num">1</div>
+                <div class="step-text">
+                  <h4>Configure & Copy</h4>
+                  <p>Pick your options above or select a preset, then click <strong>Copy Manifest URL</strong>.</p>
+                </div>
+              </div>
+              <div class="step-item">
+                <div class="step-num">2</div>
+                <div class="step-text">
+                  <h4>Open Nuvio Add-ons</h4>
+                  <p>In Nuvio, go to <strong>Settings → Add-ons → Install from URL</strong>.</p>
+                </div>
+              </div>
+              <div class="step-item">
+                <div class="step-num">3</div>
+                <div class="step-text">
+                  <h4>Paste & Confirm</h4>
+                  <p>Paste the copied URL and confirm. Your personalized rows appear instantly!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Direct Preset Add-on Links Section -->
+    <div class="presets-section" id="presets-section">
+      <h2 class="presets-title">🔗 Ready-to-Install Addon Links</h2>
+      <p class="presets-desc">Direct pre-built manifest links hosted on GitHub Pages CDN. One click to copy or install directly into Nuvio or Stremio.</p>
+      
+      <div class="presets-grid" id="presets-container">
+        <!-- Dynamic Preset Cards -->
+      </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast-notify">
+      ✓ Manifest URL copied to clipboard!
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <p>Nuvio Regional Catalog · Hosted on <a href="https://rohithselvaraj.github.io/Nuvio-Regional-Catalog/" target="_blank">GitHub Pages</a> · <a href="https://github.com/RohithSelvaraj/Nuvio-Regional-Catalog" target="_blank">GitHub Repository</a></p>
+      <p style="margin-top: 6px; font-size: 0.78rem;">This product uses the TMDB API but is not endorsed or certified by TMDB.</p>
+    </footer>
   </div>
-  <p>This product uses the TMDB API but is not endorsed or certified by TMDB.</p>
+
+  <script>
+    // Production GitHub Pages URL
+    const GITHUB_PAGES_BASE = 'https://rohithselvaraj.github.io/Nuvio-Regional-Catalog';
+
+    // Host state
+    let activeBase = GITHUB_PAGES_BASE;
+
+    // Available Languages
+    const AVAILABLE_LANGUAGES = [
+      { code: 'ta', name: 'Tamil', nativeName: 'தமிழ்', emoji: '🟠', defaultChecked: true },
+      { code: 'te', name: 'Telugu', nativeName: 'తెలుగు', emoji: '🟣', defaultChecked: true },
+      { code: 'ml', name: 'Malayalam', nativeName: 'മലയാളം', emoji: '🟢', defaultChecked: true },
+      { code: 'kn', name: 'Kannada', nativeName: 'ಕನ್ನಡ', emoji: '🔵', defaultChecked: true },
+      { code: 'hi', name: 'Hindi', nativeName: 'हिन्दी', emoji: '🟡', defaultChecked: false }
+    ];
+
+    // Available OTT Platforms
+    const AVAILABLE_OTT = [
+      { id: 8, key: 'netflix', name: 'Netflix', color: '#E50914' },
+      { id: 119, key: 'prime', name: 'Prime Video', color: '#00A8E1' },
+      { id: 122, key: 'hotstar', name: 'Hotstar', color: '#13357B' },
+      { id: 232, key: 'zee5', name: 'Zee5', color: '#7B2CBF' },
+      { id: 237, key: 'sonyliv', name: 'Sony LIV', color: '#FF4500' },
+      { id: 220, key: 'jiocinema', name: 'JioCinema', color: '#D80064' },
+      { id: 532, key: 'aha', name: 'Aha', color: '#FF4D00' },
+      { id: 309, key: 'sunnxt', name: 'Sun NXT', color: '#FDB813' }
+    ];
+
+    // All Genres
+    const ALL_GENRES = [
+      { id: 28, name: 'Action', popular: true },
+      { id: 12, name: 'Adventure', popular: false },
+      { id: 16, name: 'Animation', popular: false },
+      { id: 35, name: 'Comedy', popular: true },
+      { id: 80, name: 'Crime', popular: true },
+      { id: 99, name: 'Documentary', popular: false },
+      { id: 18, name: 'Drama', popular: true },
+      { id: 10751, name: 'Family', popular: false },
+      { id: 14, name: 'Fantasy', popular: false },
+      { id: 36, name: 'History', popular: false },
+      { id: 27, name: 'Horror', popular: true },
+      { id: 10402, name: 'Music', popular: false },
+      { id: 9648, name: 'Mystery', popular: false },
+      { id: 10749, name: 'Romance', popular: true },
+      { id: 878, name: 'Sci-Fi', popular: true },
+      { id: 53, name: 'Thriller', popular: true },
+      { id: 10752, name: 'War', popular: false },
+      { id: 37, name: 'Western', popular: false }
+    ];
+
+    // Pre-built Directory of Add-on Links
+    const DIRECTORY_PRESETS = [
+      {
+        id: 'all',
+        title: '🌟 Complete Catalog (All 4 Languages)',
+        desc: 'Tamil, Telugu, Malayalam and Kannada with Popular, Top Rated, Latest and all genre shelves.',
+        subpath: 'manifest.json',
+        count: '160 Catalogs',
+        langs: ['ta', 'te', 'ml', 'kn'],
+        types: ['movie', 'series'],
+        cats: ['popular', 'top_rated', 'new', 'genre']
+      },
+      {
+        id: 'tamil',
+        title: '🟠 Tamil Movies & TV Series',
+        desc: 'Dedicated Tamil discovery: Popular, Top Rated, Latest and 18 movie + 16 series genres.',
+        subpath: 'tamil/manifest.json',
+        count: '40 Catalogs',
+        langs: ['ta'],
+        types: ['movie', 'series'],
+        cats: ['popular', 'top_rated', 'new', 'genre']
+      },
+      {
+        id: 'telugu',
+        title: '🟣 Telugu Movies & TV Series',
+        desc: 'Dedicated Telugu discovery: Tollywood hits, classics, and series across all genres.',
+        subpath: 'telugu/manifest.json',
+        count: '40 Catalogs',
+        langs: ['te'],
+        types: ['movie', 'series'],
+        cats: ['popular', 'top_rated', 'new', 'genre']
+      },
+      {
+        id: 'malayalam',
+        title: '🟢 Malayalam Movies & TV Series',
+        desc: 'Dedicated Mollywood discovery: award-winning cinema, latest thrillers, and series.',
+        subpath: 'malayalam/manifest.json',
+        count: '40 Catalogs',
+        langs: ['ml'],
+        types: ['movie', 'series'],
+        cats: ['popular', 'top_rated', 'new', 'genre']
+      },
+      {
+        id: 'kannada',
+        title: '🔵 Kannada Movies & TV Series',
+        desc: 'Dedicated Sandalwood discovery: action blockbusters, family dramas, and series.',
+        subpath: 'kannada/manifest.json',
+        count: '40 Catalogs',
+        langs: ['kn'],
+        types: ['movie', 'series'],
+        cats: ['popular', 'top_rated', 'new', 'genre']
+      },
+      {
+        id: 'tamil-telugu',
+        title: '🟠🟣 Tamil & Telugu Mix',
+        desc: 'Both Kollywood and Tollywood catalogs together in a single lightweight add-on.',
+        subpath: 'tamil-telugu/manifest.json',
+        count: '80 Catalogs',
+        langs: ['ta', 'te'],
+        types: ['movie', 'series'],
+        cats: ['popular', 'top_rated', 'new', 'genre']
+      },
+      {
+        id: 'popular',
+        title: '🔥 Popular South Indian Hits',
+        desc: 'Trending and most popular movies and series across all 4 regional languages.',
+        subpath: 'popular/manifest.json',
+        count: '8 Catalogs',
+        langs: ['ta', 'te', 'ml', 'kn'],
+        types: ['movie', 'series'],
+        cats: ['popular']
+      },
+      {
+        id: 'top_rated',
+        title: '⭐ Top Rated Regional Cinema',
+        desc: 'Highest rated movies and series across Tamil, Telugu, Malayalam and Kannada.',
+        subpath: 'top_rated/manifest.json',
+        count: '8 Catalogs',
+        langs: ['ta', 'te', 'ml', 'kn'],
+        types: ['movie', 'series'],
+        cats: ['top_rated']
+      },
+      {
+        id: 'new',
+        title: '⚡ Latest Regional Releases',
+        desc: 'Freshly released regional movies and newly aired episodes.',
+        subpath: 'new/manifest.json',
+        count: '8 Catalogs',
+        langs: ['ta', 'te', 'ml', 'kn'],
+        types: ['movie', 'series'],
+        cats: ['new']
+      },
+      {
+        id: 'movies',
+        title: '🎬 Movies Only (All Languages)',
+        desc: 'All regional movies without TV series clutter.',
+        subpath: 'movies/manifest.json',
+        count: '84 Catalogs',
+        langs: ['ta', 'te', 'ml', 'kn'],
+        types: ['movie'],
+        cats: ['popular', 'top_rated', 'new', 'genre']
+      },
+      {
+        id: 'series',
+        title: '📺 TV Series Only (All Languages)',
+        desc: 'Regional television shows and web series across all languages.',
+        subpath: 'series/manifest.json',
+        count: '76 Catalogs',
+        langs: ['ta', 'te', 'ml', 'kn'],
+        types: ['series'],
+        cats: ['popular', 'top_rated', 'new', 'genre']
+      }
+    ];
+
+    // State
+    const state = {
+      languages: new Set(['ta', 'te', 'ml', 'kn']),
+      ott: new Set(),
+      types: new Set(['movie', 'series']),
+      categories: new Set(['popular', 'top_rated', 'new', 'genre']),
+      genres: new Set(ALL_GENRES.map(g => g.id))
+    };
+
+    // Auto-detect current host or fallback to GitHub Pages
+    function initHostMode() {
+      const loc = window.location;
+      const currentHostDisplay = document.getElementById('current-host-display');
+      const btnGh = document.getElementById('btn-host-gh');
+      const btnCustom = document.getElementById('btn-host-custom');
+
+      if (loc.hostname.includes('github.io')) {
+        activeBase = GITHUB_PAGES_BASE;
+        btnGh.classList.add('active');
+        btnCustom.classList.remove('active');
+      } else {
+        // Default to GitHub Pages link as requested by user
+        activeBase = GITHUB_PAGES_BASE;
+      }
+
+      currentHostDisplay.textContent = activeBase + '/';
+
+      btnGh.addEventListener('click', () => {
+        activeBase = GITHUB_PAGES_BASE;
+        btnGh.classList.add('active');
+        btnCustom.classList.remove('active');
+        currentHostDisplay.textContent = activeBase + '/';
+        updateOutput();
+        renderPresets();
+      });
+
+      btnCustom.addEventListener('click', () => {
+        const liveHost = window.location.origin + (window.location.pathname.startsWith('/Nuvio-Regional-Catalog') ? '/Nuvio-Regional-Catalog' : '');
+        activeBase = liveHost;
+        btnCustom.classList.add('active');
+        btnGh.classList.remove('active');
+        currentHostDisplay.textContent = activeBase + '/';
+        updateOutput();
+        renderPresets();
+      });
+    }
+
+    // Render Controls
+    function renderLanguages() {
+      const container = document.getElementById('languages-container');
+      container.innerHTML = '';
+      AVAILABLE_LANGUAGES.forEach(lang => {
+        const isChecked = state.languages.has(lang.code);
+        const tile = document.createElement('div');
+        tile.className = `select-tile ${isChecked ? 'active' : ''}`;
+        tile.id = `lang-tile-${lang.code}`;
+        tile.innerHTML = `
+          <input type="checkbox" id="chk-lang-${lang.code}" ${isChecked ? 'checked' : ''}>
+          <div class="tile-emoji">${lang.emoji}</div>
+          <div class="tile-name">${lang.name}</div>
+          <div class="tile-native">${lang.nativeName}</div>
+        `;
+        tile.addEventListener('click', (e) => {
+          if (e.target.tagName !== 'INPUT') {
+            const chk = tile.querySelector('input');
+            chk.checked = !chk.checked;
+          }
+          const chk = tile.querySelector('input');
+          if (chk.checked) state.languages.add(lang.code);
+          else state.languages.delete(lang.code);
+          tile.classList.toggle('active', chk.checked);
+          updateOutput();
+        });
+        container.appendChild(tile);
+      });
+    }
+
+    function renderOtt() {
+      const container = document.getElementById('ott-container');
+      container.innerHTML = '';
+      AVAILABLE_OTT.forEach(ott => {
+        const isChecked = state.ott.has(ott.key);
+        const pill = document.createElement('div');
+        pill.className = `ott-pill ${isChecked ? 'active' : ''}`;
+        pill.id = `ott-pill-${ott.key}`;
+        pill.innerHTML = `
+          <span class="ott-dot" style="background: ${ott.color};"></span>
+          <span>${ott.name}</span>
+        `;
+        pill.addEventListener('click', () => {
+          if (state.ott.has(ott.key)) {
+            state.ott.delete(ott.key);
+            pill.classList.remove('active');
+          } else {
+            state.ott.add(ott.key);
+            pill.classList.add('active');
+          }
+          updateOutput();
+        });
+        container.appendChild(pill);
+      });
+    }
+
+    function renderGenres() {
+      const container = document.getElementById('genres-container');
+      container.innerHTML = '';
+      ALL_GENRES.forEach(genre => {
+        const isChecked = state.genres.has(genre.id);
+        const chip = document.createElement('div');
+        chip.className = `genre-chip ${isChecked ? 'active' : ''}`;
+        chip.id = `genre-chip-${genre.id}`;
+        chip.textContent = genre.name;
+        chip.addEventListener('click', () => {
+          if (state.genres.has(genre.id)) {
+            state.genres.delete(genre.id);
+            chip.classList.remove('active');
+          } else {
+            state.genres.add(genre.id);
+            chip.classList.add('active');
+          }
+          updateOutput();
+        });
+        container.appendChild(chip);
+      });
+    }
+
+    // Render Preset Links Section
+    function renderPresets() {
+      const container = document.getElementById('presets-container');
+      container.innerHTML = '';
+
+      DIRECTORY_PRESETS.forEach(preset => {
+        const manifestUrl = `${activeBase}/${preset.subpath}`;
+        const stremioUrl = manifestUrl.replace(/^https?:\/\//, 'stremio://');
+
+        const card = document.createElement('div');
+        card.className = 'preset-card';
+        card.innerHTML = `
+          <div>
+            <div class="preset-header">
+              <h3 class="preset-name">${preset.title}</h3>
+              <span class="preset-count">${preset.count}</span>
+            </div>
+            <p class="preset-desc">${preset.desc}</p>
+          </div>
+          <div class="preset-url" title="${manifestUrl}">${manifestUrl}</div>
+          <div class="preset-actions">
+            <button type="button" class="preset-btn btn-copy-preset" data-url="${manifestUrl}">📋 Copy Link</button>
+            <a href="${stremioUrl}" class="preset-btn btn-hl">🚀 Install</a>
+            <a href="${manifestUrl}" target="_blank" class="preset-btn" style="flex: 0 0 45px;">JSON</a>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+
+      // Attach copy listeners
+      container.querySelectorAll('.btn-copy-preset').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const url = btn.getAttribute('data-url');
+          navigator.clipboard.writeText(url).then(() => {
+            const toast = document.getElementById('toast-notify');
+            toast.textContent = `✓ Copied: ${url}`;
+            toast.classList.add('show');
+            const orig = btn.textContent;
+            btn.textContent = '✓ Copied!';
+            setTimeout(() => {
+              toast.classList.remove('show');
+              btn.textContent = orig;
+            }, 2200);
+          });
+        });
+      });
+    }
+
+    // Dynamic URL Matching Engine
+    function matchDynamicPreset() {
+      const activeLangs = Array.from(state.languages);
+      const activeTypes = Array.from(state.types);
+      const activeCats = Array.from(state.categories);
+      const isAllGenres = state.genres.size === ALL_GENRES.length;
+      const hasOtt = state.ott.size > 0;
+
+      // Check against directory presets
+      for (const preset of DIRECTORY_PRESETS) {
+        if (hasOtt) break; // OTT is custom dynamic query
+        if (!isAllGenres && preset.cats.includes('genre')) continue;
+
+        const langsMatch = preset.langs.length === activeLangs.length &&
+          preset.langs.every(l => state.languages.has(l));
+        const typesMatch = preset.types.length === activeTypes.length &&
+          preset.types.every(t => state.types.has(t));
+        const catsMatch = preset.cats.length === activeCats.length &&
+          preset.cats.every(c => state.categories.has(c));
+
+        if (langsMatch && typesMatch && catsMatch) {
+          return {
+            subpath: preset.subpath,
+            isStaticPreset: true
+          };
+        }
+      }
+
+      // If no exact static preset match, build dynamic query path
+      let configParts = [];
+      const codeToName = { ta: 'tamil', te: 'telugu', ml: 'malayalam', kn: 'kannada', hi: 'hindi' };
+      const isDefaultLangs = activeLangs.length === 4 && ['ta', 'te', 'ml', 'kn'].every(c => state.languages.has(c));
+      
+      if (!isDefaultLangs && activeLangs.length > 0) {
+        configParts.push(`lang=${activeLangs.map(c => codeToName[c] || c).join(',')}`);
+      }
+
+      if (!isAllGenres && state.genres.size > 0) {
+        configParts.push(`genres=${Array.from(state.genres).join(',')}`);
+      }
+
+      if (hasOtt) {
+        configParts.push(`ott=${Array.from(state.ott).join(',')}`);
+      }
+
+      const isDefaultTypes = activeTypes.length === 2 && state.types.has('movie') && state.types.has('series');
+      if (!isDefaultTypes && activeTypes.length > 0) {
+        configParts.push(`types=${activeTypes.join(',')}`);
+      }
+
+      const isDefaultCats = activeCats.length === 4 && ['popular', 'top_rated', 'new', 'genre'].every(c => state.categories.has(c));
+      if (!isDefaultCats && activeCats.length > 0) {
+        configParts.push(`cats=${activeCats.join(',')}`);
+      }
+
+      if (configParts.length === 0) {
+        return { subpath: 'manifest.json', isStaticPreset: true };
+      }
+
+      return {
+        subpath: `${configParts.join('&')}/manifest.json`,
+        isStaticPreset: false
+      };
+    }
+
+    // Dynamic URL Builder & Catalog Counter
+    function updateOutput() {
+      // Fast estimate of catalog count
+      let totalCatalogs = 0;
+      const activeTypes = Array.from(state.types);
+      const activeLangs = Array.from(state.languages);
+
+      activeLangs.forEach(lang => {
+        activeTypes.forEach(type => {
+          ['popular', 'top_rated', 'new'].forEach(cat => {
+            if (state.categories.has(cat)) totalCatalogs++;
+          });
+          if (state.categories.has('genre')) {
+            totalCatalogs += (type === 'movie' ? Math.min(state.genres.size, 18) : Math.min(state.genres.size, 16));
+          }
+        });
+      });
+
+      const counterBadge = document.getElementById('catalog-counter-badge');
+      counterBadge.textContent = `⚡ ${totalCatalogs} Catalogs Included`;
+
+      // Match dynamic URL
+      const match = matchDynamicPreset();
+      const manifestUrl = `${activeBase}/${match.subpath}`;
+      const stremioUrl = manifestUrl.replace(/^https?:\/\//, 'stremio://');
+
+      const matchedBadge = document.getElementById('matched-status-badge');
+      if (match.isStaticPreset) {
+        matchedBadge.textContent = 'CDN Static Match';
+        matchedBadge.style.color = 'var(--success)';
+        matchedBadge.style.borderColor = 'rgba(16, 185, 129, 0.3)';
+        matchedBadge.style.background = 'rgba(16, 185, 129, 0.15)';
+      } else {
+        matchedBadge.textContent = 'Dynamic Query';
+        matchedBadge.style.color = 'var(--accent-cyan)';
+        matchedBadge.style.borderColor = 'rgba(6, 182, 212, 0.3)';
+        matchedBadge.style.background = 'rgba(6, 182, 212, 0.15)';
+      }
+
+      // Update Inputs and Buttons
+      const urlInput = document.getElementById('manifest-url-input');
+      urlInput.value = manifestUrl;
+
+      const btnInstall = document.getElementById('btn-install');
+      btnInstall.href = stremioUrl;
+
+      const btnPreview = document.getElementById('btn-preview');
+      btnPreview.href = manifestUrl;
+
+      const btnCollections = document.getElementById('btn-collections');
+      const collectionsSub = match.subpath.replace(/manifest\.json$/, 'collections.json');
+      btnCollections.href = `${activeBase}/${collectionsSub}`;
+    }
+
+    // Event Handlers
+    function setupEvents() {
+      // Language quick buttons
+      document.getElementById('btn-lang-all').addEventListener('click', () => {
+        AVAILABLE_LANGUAGES.forEach(l => state.languages.add(l.code));
+        renderLanguages();
+        updateOutput();
+      });
+
+      document.getElementById('btn-lang-default').addEventListener('click', () => {
+        state.languages = new Set(['ta', 'te', 'ml', 'kn']);
+        renderLanguages();
+        updateOutput();
+      });
+
+      // OTT clear button
+      document.getElementById('btn-ott-clear').addEventListener('click', () => {
+        state.ott.clear();
+        renderOtt();
+        updateOutput();
+      });
+
+      // Types checkboxes
+      ['movie', 'series'].forEach(t => {
+        const chk = document.getElementById(`chk-type-${t}`);
+        chk.addEventListener('change', () => {
+          if (chk.checked) state.types.add(t);
+          else state.types.delete(t);
+          updateOutput();
+        });
+      });
+
+      // Categories checkboxes
+      ['popular', 'top_rated', 'new', 'genre'].forEach(c => {
+        const chk = document.getElementById(`chk-cat-${c}`);
+        chk.addEventListener('change', () => {
+          if (chk.checked) state.categories.add(c);
+          else state.categories.delete(c);
+          updateOutput();
+        });
+      });
+
+      // Genres quick buttons
+      document.getElementById('btn-genres-all').addEventListener('click', () => {
+        state.genres = new Set(ALL_GENRES.map(g => g.id));
+        renderGenres();
+        updateOutput();
+      });
+
+      document.getElementById('btn-genres-popular').addEventListener('click', () => {
+        state.genres = new Set(ALL_GENRES.filter(g => g.popular).map(g => g.id));
+        renderGenres();
+        updateOutput();
+      });
+
+      // Copy Button
+      const btnCopy = document.getElementById('btn-copy');
+      const toast = document.getElementById('toast-notify');
+      btnCopy.addEventListener('click', () => {
+        const url = document.getElementById('manifest-url-input').value;
+        navigator.clipboard.writeText(url).then(() => {
+          toast.textContent = '✓ Manifest URL copied to clipboard!';
+          toast.classList.add('show');
+          btnCopy.textContent = '✓ Copied to Clipboard!';
+          setTimeout(() => {
+            toast.classList.remove('show');
+            btnCopy.textContent = '📋 Copy Manifest URL';
+          }, 2500);
+        });
+      });
+
+      // Click to select in URL input
+      document.getElementById('manifest-url-input').addEventListener('click', function() {
+        this.select();
+      });
+    }
+
+    // Initialize
+    window.addEventListener('DOMContentLoaded', () => {
+      initHostMode();
+      renderLanguages();
+      renderOtt();
+      renderGenres();
+      renderPresets();
+      setupEvents();
+      updateOutput();
+    });
+  </script>
 </body>
 </html>
