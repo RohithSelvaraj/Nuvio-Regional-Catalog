@@ -1,0 +1,2632 @@
+[
+  {
+    "id": "regional.south-indian",
+    "title": "🇮🇳 South Indian Mix",
+    "showAllTab": true,
+    "viewMode": "FOLLOW_LAYOUT",
+    "pinToTop": true,
+    "focusGlowEnabled": true,
+    "folders": [
+      {
+        "id": "regional.mix.movie.popular",
+        "title": "Popular South Indian Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.ta.popular",
+            "type": "movie"
+          },
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.te.popular",
+            "type": "movie"
+          },
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.ml.popular",
+            "type": "movie"
+          },
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.kn.popular",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "🔥"
+      },
+      {
+        "id": "regional.mix.movie.top_rated",
+        "title": "Top Rated South Indian Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.ta.top_rated",
+            "type": "movie"
+          },
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.te.top_rated",
+            "type": "movie"
+          },
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.ml.top_rated",
+            "type": "movie"
+          },
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.kn.top_rated",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "⭐"
+      },
+      {
+        "id": "regional.mix.movie.new",
+        "title": "Latest South Indian Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.ta.new",
+            "type": "movie"
+          },
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.te.new",
+            "type": "movie"
+          },
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.ml.new",
+            "type": "movie"
+          },
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.kn.new",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "🆕"
+      },
+      {
+        "id": "regional.mix.series.popular",
+        "title": "Popular South Indian Series",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.ta.popular",
+            "type": "series"
+          },
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.te.popular",
+            "type": "series"
+          },
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.ml.popular",
+            "type": "series"
+          },
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.kn.popular",
+            "type": "series"
+          }
+        ],
+        "coverEmoji": "🔥"
+      },
+      {
+        "id": "regional.mix.series.top_rated",
+        "title": "Top Rated South Indian Series",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.ta.top_rated",
+            "type": "series"
+          },
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.te.top_rated",
+            "type": "series"
+          },
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.ml.top_rated",
+            "type": "series"
+          },
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.kn.top_rated",
+            "type": "series"
+          }
+        ],
+        "coverEmoji": "⭐"
+      },
+      {
+        "id": "regional.mix.series.new",
+        "title": "Latest South Indian Series",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.ta.new",
+            "type": "series"
+          },
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.te.new",
+            "type": "series"
+          },
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.ml.new",
+            "type": "series"
+          },
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.kn.new",
+            "type": "series"
+          }
+        ],
+        "coverEmoji": "🆕"
+      }
+    ]
+  },
+  {
+    "id": "regional.language.ta",
+    "title": "🟠 Tamil Regional Catalog",
+    "showAllTab": true,
+    "viewMode": "FOLLOW_LAYOUT",
+    "pinToTop": true,
+    "focusGlowEnabled": true,
+    "folders": [
+      {
+        "id": "regional.ta.movie.popular",
+        "title": "Popular Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.ta.popular",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "🔥"
+      },
+      {
+        "id": "regional.ta.movie.top_rated",
+        "title": "Top Rated Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.ta.top_rated",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "⭐"
+      },
+      {
+        "id": "regional.ta.movie.new",
+        "title": "Latest Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.ta.new",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "🆕"
+      },
+      {
+        "id": "regional.ta.movie.genre.28",
+        "title": "Action Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.ta.genre.28",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.ta.movie.genre.12",
+        "title": "Adventure Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.ta.genre.12",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.ta.movie.genre.16",
+        "title": "Animation Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.ta.genre.16",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.ta.movie.genre.35",
+        "title": "Comedy Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.ta.genre.35",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.ta.movie.genre.80",
+        "title": "Crime Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.ta.genre.80",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.ta.movie.genre.99",
+        "title": "Documentary Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.ta.genre.99",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.ta.movie.genre.18",
+        "title": "Drama Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.ta.genre.18",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.ta.movie.genre.10751",
+        "title": "Family Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.ta.genre.10751",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.ta.movie.genre.14",
+        "title": "Fantasy Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.ta.genre.14",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.ta.movie.genre.36",
+        "title": "History Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.ta.genre.36",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.ta.movie.genre.27",
+        "title": "Horror Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.ta.genre.27",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.ta.movie.genre.10402",
+        "title": "Music Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.ta.genre.10402",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.ta.movie.genre.9648",
+        "title": "Mystery Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.ta.genre.9648",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.ta.movie.genre.10749",
+        "title": "Romance Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.ta.genre.10749",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.ta.movie.genre.878",
+        "title": "Science Fiction Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.ta.genre.878",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.ta.movie.genre.53",
+        "title": "Thriller Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.ta.genre.53",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.ta.movie.genre.10752",
+        "title": "War Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.ta.genre.10752",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.ta.movie.genre.37",
+        "title": "Western Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.ta.genre.37",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.ta.series.popular",
+        "title": "Popular Series",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.ta.popular",
+            "type": "series"
+          }
+        ],
+        "coverEmoji": "🔥"
+      },
+      {
+        "id": "regional.ta.series.top_rated",
+        "title": "Top Rated Series",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.ta.top_rated",
+            "type": "series"
+          }
+        ],
+        "coverEmoji": "⭐"
+      },
+      {
+        "id": "regional.ta.series.new",
+        "title": "Latest Series",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.ta.new",
+            "type": "series"
+          }
+        ],
+        "coverEmoji": "🆕"
+      },
+      {
+        "id": "regional.ta.series.genre.10759",
+        "title": "Action & Adventure Series",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.ta.genre.10759",
+            "type": "series"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.ta.series.genre.16",
+        "title": "Animation Series",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.ta.genre.16",
+            "type": "series"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.ta.series.genre.35",
+        "title": "Comedy Series",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.ta.genre.35",
+            "type": "series"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.ta.series.genre.80",
+        "title": "Crime Series",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.ta.genre.80",
+            "type": "series"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.ta.series.genre.99",
+        "title": "Documentary Series",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.ta.genre.99",
+            "type": "series"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.ta.series.genre.18",
+        "title": "Drama Series",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.ta.genre.18",
+            "type": "series"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.ta.series.genre.10751",
+        "title": "Family Series",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.ta.genre.10751",
+            "type": "series"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.ta.series.genre.10762",
+        "title": "Kids Series",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.ta.genre.10762",
+            "type": "series"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.ta.series.genre.9648",
+        "title": "Mystery Series",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.ta.genre.9648",
+            "type": "series"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.ta.series.genre.10763",
+        "title": "News Series",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.ta.genre.10763",
+            "type": "series"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.ta.series.genre.10764",
+        "title": "Reality Series",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.ta.genre.10764",
+            "type": "series"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.ta.series.genre.10765",
+        "title": "Sci-Fi & Fantasy Series",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.ta.genre.10765",
+            "type": "series"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.ta.series.genre.10766",
+        "title": "Soap Series",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.ta.genre.10766",
+            "type": "series"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.ta.series.genre.10767",
+        "title": "Talk Series",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.ta.genre.10767",
+            "type": "series"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.ta.series.genre.10768",
+        "title": "War & Politics Series",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.ta.genre.10768",
+            "type": "series"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.ta.series.genre.37",
+        "title": "Western Series",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.ta.genre.37",
+            "type": "series"
+          }
+        ],
+        "coverEmoji": "🎭"
+      }
+    ]
+  },
+  {
+    "id": "regional.language.te",
+    "title": "🟣 Telugu Regional Catalog",
+    "showAllTab": true,
+    "viewMode": "FOLLOW_LAYOUT",
+    "pinToTop": true,
+    "focusGlowEnabled": true,
+    "folders": [
+      {
+        "id": "regional.te.movie.popular",
+        "title": "Popular Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.te.popular",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "🔥"
+      },
+      {
+        "id": "regional.te.movie.top_rated",
+        "title": "Top Rated Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.te.top_rated",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "⭐"
+      },
+      {
+        "id": "regional.te.movie.new",
+        "title": "Latest Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.te.new",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "🆕"
+      },
+      {
+        "id": "regional.te.movie.genre.28",
+        "title": "Action Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.te.genre.28",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.te.movie.genre.12",
+        "title": "Adventure Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.te.genre.12",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.te.movie.genre.16",
+        "title": "Animation Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.te.genre.16",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.te.movie.genre.35",
+        "title": "Comedy Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.te.genre.35",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.te.movie.genre.80",
+        "title": "Crime Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.te.genre.80",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.te.movie.genre.99",
+        "title": "Documentary Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.te.genre.99",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.te.movie.genre.18",
+        "title": "Drama Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.te.genre.18",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.te.movie.genre.10751",
+        "title": "Family Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.te.genre.10751",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.te.movie.genre.14",
+        "title": "Fantasy Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.te.genre.14",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.te.movie.genre.36",
+        "title": "History Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.te.genre.36",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.te.movie.genre.27",
+        "title": "Horror Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.te.genre.27",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.te.movie.genre.10402",
+        "title": "Music Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.te.genre.10402",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.te.movie.genre.9648",
+        "title": "Mystery Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.te.genre.9648",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.te.movie.genre.10749",
+        "title": "Romance Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.te.genre.10749",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.te.movie.genre.878",
+        "title": "Science Fiction Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.te.genre.878",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.te.movie.genre.53",
+        "title": "Thriller Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.te.genre.53",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.te.movie.genre.10752",
+        "title": "War Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.te.genre.10752",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.te.movie.genre.37",
+        "title": "Western Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.te.genre.37",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.te.series.popular",
+        "title": "Popular Series",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.te.popular",
+            "type": "series"
+          }
+        ],
+        "coverEmoji": "🔥"
+      },
+      {
+        "id": "regional.te.series.top_rated",
+        "title": "Top Rated Series",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.te.top_rated",
+            "type": "series"
+          }
+        ],
+        "coverEmoji": "⭐"
+      },
+      {
+        "id": "regional.te.series.new",
+        "title": "Latest Series",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.te.new",
+            "type": "series"
+          }
+        ],
+        "coverEmoji": "🆕"
+      },
+      {
+        "id": "regional.te.series.genre.10759",
+        "title": "Action & Adventure Series",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.te.genre.10759",
+            "type": "series"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.te.series.genre.16",
+        "title": "Animation Series",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.te.genre.16",
+            "type": "series"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.te.series.genre.35",
+        "title": "Comedy Series",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.te.genre.35",
+            "type": "series"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.te.series.genre.80",
+        "title": "Crime Series",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.te.genre.80",
+            "type": "series"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.te.series.genre.99",
+        "title": "Documentary Series",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.te.genre.99",
+            "type": "series"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.te.series.genre.18",
+        "title": "Drama Series",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.te.genre.18",
+            "type": "series"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.te.series.genre.10751",
+        "title": "Family Series",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.te.genre.10751",
+            "type": "series"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.te.series.genre.10762",
+        "title": "Kids Series",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.te.genre.10762",
+            "type": "series"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.te.series.genre.9648",
+        "title": "Mystery Series",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.te.genre.9648",
+            "type": "series"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.te.series.genre.10763",
+        "title": "News Series",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.te.genre.10763",
+            "type": "series"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.te.series.genre.10764",
+        "title": "Reality Series",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.te.genre.10764",
+            "type": "series"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.te.series.genre.10765",
+        "title": "Sci-Fi & Fantasy Series",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.te.genre.10765",
+            "type": "series"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.te.series.genre.10766",
+        "title": "Soap Series",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.te.genre.10766",
+            "type": "series"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.te.series.genre.10767",
+        "title": "Talk Series",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.te.genre.10767",
+            "type": "series"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.te.series.genre.10768",
+        "title": "War & Politics Series",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.te.genre.10768",
+            "type": "series"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.te.series.genre.37",
+        "title": "Western Series",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.te.genre.37",
+            "type": "series"
+          }
+        ],
+        "coverEmoji": "🎭"
+      }
+    ]
+  },
+  {
+    "id": "regional.language.ml",
+    "title": "🟢 Malayalam Regional Catalog",
+    "showAllTab": true,
+    "viewMode": "FOLLOW_LAYOUT",
+    "pinToTop": true,
+    "focusGlowEnabled": true,
+    "folders": [
+      {
+        "id": "regional.ml.movie.popular",
+        "title": "Popular Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.ml.popular",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "🔥"
+      },
+      {
+        "id": "regional.ml.movie.top_rated",
+        "title": "Top Rated Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.ml.top_rated",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "⭐"
+      },
+      {
+        "id": "regional.ml.movie.new",
+        "title": "Latest Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.ml.new",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "🆕"
+      },
+      {
+        "id": "regional.ml.movie.genre.28",
+        "title": "Action Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.ml.genre.28",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.ml.movie.genre.12",
+        "title": "Adventure Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.ml.genre.12",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.ml.movie.genre.16",
+        "title": "Animation Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.ml.genre.16",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.ml.movie.genre.35",
+        "title": "Comedy Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.ml.genre.35",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.ml.movie.genre.80",
+        "title": "Crime Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.ml.genre.80",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.ml.movie.genre.99",
+        "title": "Documentary Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.ml.genre.99",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.ml.movie.genre.18",
+        "title": "Drama Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.ml.genre.18",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.ml.movie.genre.10751",
+        "title": "Family Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.ml.genre.10751",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.ml.movie.genre.14",
+        "title": "Fantasy Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.ml.genre.14",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.ml.movie.genre.36",
+        "title": "History Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.ml.genre.36",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.ml.movie.genre.27",
+        "title": "Horror Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.ml.genre.27",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.ml.movie.genre.10402",
+        "title": "Music Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.ml.genre.10402",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.ml.movie.genre.9648",
+        "title": "Mystery Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.ml.genre.9648",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.ml.movie.genre.10749",
+        "title": "Romance Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.ml.genre.10749",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.ml.movie.genre.878",
+        "title": "Science Fiction Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.ml.genre.878",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.ml.movie.genre.53",
+        "title": "Thriller Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.ml.genre.53",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.ml.movie.genre.10752",
+        "title": "War Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.ml.genre.10752",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.ml.movie.genre.37",
+        "title": "Western Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.ml.genre.37",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.ml.series.popular",
+        "title": "Popular Series",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.ml.popular",
+            "type": "series"
+          }
+        ],
+        "coverEmoji": "🔥"
+      },
+      {
+        "id": "regional.ml.series.top_rated",
+        "title": "Top Rated Series",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.ml.top_rated",
+            "type": "series"
+          }
+        ],
+        "coverEmoji": "⭐"
+      },
+      {
+        "id": "regional.ml.series.new",
+        "title": "Latest Series",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.ml.new",
+            "type": "series"
+          }
+        ],
+        "coverEmoji": "🆕"
+      },
+      {
+        "id": "regional.ml.series.genre.10759",
+        "title": "Action & Adventure Series",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.ml.genre.10759",
+            "type": "series"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.ml.series.genre.16",
+        "title": "Animation Series",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.ml.genre.16",
+            "type": "series"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.ml.series.genre.35",
+        "title": "Comedy Series",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.ml.genre.35",
+            "type": "series"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.ml.series.genre.80",
+        "title": "Crime Series",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.ml.genre.80",
+            "type": "series"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.ml.series.genre.99",
+        "title": "Documentary Series",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.ml.genre.99",
+            "type": "series"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.ml.series.genre.18",
+        "title": "Drama Series",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.ml.genre.18",
+            "type": "series"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.ml.series.genre.10751",
+        "title": "Family Series",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.ml.genre.10751",
+            "type": "series"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.ml.series.genre.10762",
+        "title": "Kids Series",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.ml.genre.10762",
+            "type": "series"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.ml.series.genre.9648",
+        "title": "Mystery Series",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.ml.genre.9648",
+            "type": "series"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.ml.series.genre.10763",
+        "title": "News Series",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.ml.genre.10763",
+            "type": "series"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.ml.series.genre.10764",
+        "title": "Reality Series",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.ml.genre.10764",
+            "type": "series"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.ml.series.genre.10765",
+        "title": "Sci-Fi & Fantasy Series",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.ml.genre.10765",
+            "type": "series"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.ml.series.genre.10766",
+        "title": "Soap Series",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.ml.genre.10766",
+            "type": "series"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.ml.series.genre.10767",
+        "title": "Talk Series",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.ml.genre.10767",
+            "type": "series"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.ml.series.genre.10768",
+        "title": "War & Politics Series",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.ml.genre.10768",
+            "type": "series"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.ml.series.genre.37",
+        "title": "Western Series",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.ml.genre.37",
+            "type": "series"
+          }
+        ],
+        "coverEmoji": "🎭"
+      }
+    ]
+  },
+  {
+    "id": "regional.language.kn",
+    "title": "🔵 Kannada Regional Catalog",
+    "showAllTab": true,
+    "viewMode": "FOLLOW_LAYOUT",
+    "pinToTop": true,
+    "focusGlowEnabled": true,
+    "folders": [
+      {
+        "id": "regional.kn.movie.popular",
+        "title": "Popular Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.kn.popular",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "🔥"
+      },
+      {
+        "id": "regional.kn.movie.top_rated",
+        "title": "Top Rated Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.kn.top_rated",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "⭐"
+      },
+      {
+        "id": "regional.kn.movie.new",
+        "title": "Latest Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.kn.new",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "🆕"
+      },
+      {
+        "id": "regional.kn.movie.genre.28",
+        "title": "Action Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.kn.genre.28",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.kn.movie.genre.12",
+        "title": "Adventure Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.kn.genre.12",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.kn.movie.genre.16",
+        "title": "Animation Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.kn.genre.16",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.kn.movie.genre.35",
+        "title": "Comedy Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.kn.genre.35",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.kn.movie.genre.80",
+        "title": "Crime Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.kn.genre.80",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.kn.movie.genre.99",
+        "title": "Documentary Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.kn.genre.99",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.kn.movie.genre.18",
+        "title": "Drama Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.kn.genre.18",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.kn.movie.genre.10751",
+        "title": "Family Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.kn.genre.10751",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.kn.movie.genre.14",
+        "title": "Fantasy Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.kn.genre.14",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.kn.movie.genre.36",
+        "title": "History Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.kn.genre.36",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.kn.movie.genre.27",
+        "title": "Horror Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.kn.genre.27",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.kn.movie.genre.10402",
+        "title": "Music Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.kn.genre.10402",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.kn.movie.genre.9648",
+        "title": "Mystery Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.kn.genre.9648",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.kn.movie.genre.10749",
+        "title": "Romance Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.kn.genre.10749",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.kn.movie.genre.878",
+        "title": "Science Fiction Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.kn.genre.878",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.kn.movie.genre.53",
+        "title": "Thriller Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.kn.genre.53",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.kn.movie.genre.10752",
+        "title": "War Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.kn.genre.10752",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.kn.movie.genre.37",
+        "title": "Western Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.kn.genre.37",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.kn.series.popular",
+        "title": "Popular Series",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.kn.popular",
+            "type": "series"
+          }
+        ],
+        "coverEmoji": "🔥"
+      },
+      {
+        "id": "regional.kn.series.top_rated",
+        "title": "Top Rated Series",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.kn.top_rated",
+            "type": "series"
+          }
+        ],
+        "coverEmoji": "⭐"
+      },
+      {
+        "id": "regional.kn.series.new",
+        "title": "Latest Series",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.kn.new",
+            "type": "series"
+          }
+        ],
+        "coverEmoji": "🆕"
+      },
+      {
+        "id": "regional.kn.series.genre.10759",
+        "title": "Action & Adventure Series",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.kn.genre.10759",
+            "type": "series"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.kn.series.genre.16",
+        "title": "Animation Series",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.kn.genre.16",
+            "type": "series"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.kn.series.genre.35",
+        "title": "Comedy Series",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.kn.genre.35",
+            "type": "series"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.kn.series.genre.80",
+        "title": "Crime Series",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.kn.genre.80",
+            "type": "series"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.kn.series.genre.99",
+        "title": "Documentary Series",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.kn.genre.99",
+            "type": "series"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.kn.series.genre.18",
+        "title": "Drama Series",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.kn.genre.18",
+            "type": "series"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.kn.series.genre.10751",
+        "title": "Family Series",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.kn.genre.10751",
+            "type": "series"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.kn.series.genre.10762",
+        "title": "Kids Series",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.kn.genre.10762",
+            "type": "series"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.kn.series.genre.9648",
+        "title": "Mystery Series",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.kn.genre.9648",
+            "type": "series"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.kn.series.genre.10763",
+        "title": "News Series",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.kn.genre.10763",
+            "type": "series"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.kn.series.genre.10764",
+        "title": "Reality Series",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.kn.genre.10764",
+            "type": "series"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.kn.series.genre.10765",
+        "title": "Sci-Fi & Fantasy Series",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.kn.genre.10765",
+            "type": "series"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.kn.series.genre.10766",
+        "title": "Soap Series",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.kn.genre.10766",
+            "type": "series"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.kn.series.genre.10767",
+        "title": "Talk Series",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.kn.genre.10767",
+            "type": "series"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.kn.series.genre.10768",
+        "title": "War & Politics Series",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.kn.genre.10768",
+            "type": "series"
+          }
+        ],
+        "coverEmoji": "🎭"
+      },
+      {
+        "id": "regional.kn.series.genre.37",
+        "title": "Western Series",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.kn.genre.37",
+            "type": "series"
+          }
+        ],
+        "coverEmoji": "🎭"
+      }
+    ]
+  }
+]

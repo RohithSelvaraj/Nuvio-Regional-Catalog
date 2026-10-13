@@ -1,0 +1,17 @@
+{
+  "name": "nuvio-regional-catalog",
+  "version": "1.0.0",
+  "private": true,
+  "description": "TMDB-powered Tamil, Telugu, Malayalam and Kannada catalogs for Nuvio.",
+  "type": "module",
+  "scripts": {
+    "build:collections": "node scripts/build-collections.mjs",
+    "build:manifest": "node scripts/build-catalogs.mjs --manifest-only",
+    "build:catalogs": "node scripts/build-catalogs.mjs",
+    "build": "npm run build:collections && npm run build:catalogs",
+    "validate": "node scripts/validate.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

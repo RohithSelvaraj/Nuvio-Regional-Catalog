@@ -1,0 +1,15 @@
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Local output (generated again during GitHub Pages deployment)
+public/manifest.json
+public/catalog/
+
+# Node / editor clutter
+node_modules/
+npm-debug.log*
+.DS_Store
+Thumbs.db
+.vscode/
