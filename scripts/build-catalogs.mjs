@@ -20,9 +20,9 @@ const manifest = {
     type: def.type,
     id: def.id,
     name: def.title,
-    pageSize: 20
+    pageSize: 60
   })),
-  behaviorHints: { adult: false, configurable: false }
+  behaviorHints: { adult: false, configurable: true }
 };
 fs.writeFileSync(path.join(publicDir, 'manifest.json'), JSON.stringify(manifest, null, 2) + '\n', 'utf8');
 
@@ -83,26 +83,52 @@ async function tmdbGet(endpoint, params) {
 
 function delay(ms) { return new Promise(resolve => setTimeout(resolve, ms)); }
 
-function queryFor(def) {
+const JUNK_TITLE_REGEX = /\b(short|documentary|interview|trailer|teaser|promo|press meet|super show|rave|audio launch|making of|glimpse|motion poster|behind the scenes|sneak peek)\b/i;
+
+function isValidItem(item, def) {
+  if (!item) return false;
+  const title = item.title || item.name || item.original_title || item.original_name || '';
+  if (!title) return false;
+  if (!item.poster_path) return false;
+  if (def.category !== 'genre' || def.genre?.id !== 99) {
+    if (JUNK_TITLE_REGEX.test(title)) return false;
+    if (/\((short|documentary)\)$/i.test(title.trim())) return false;
+  }
+  return true;
+}
+
+function queryFor(def, page = 1) {
   const params = {
     include_adult: 'false',
-    page: 1,
+    page,
     with_original_language: def.language.code,
-    sort_by: 'popularity.desc',
-    region: 'IN'
+    sort_by: 'popularity.desc'
   };
+
+  if (def.type === 'movie') {
+    params.include_video = 'false';
+    if (def.category !== 'genre' || def.genre?.id !== 99) {
+      params.without_genres = '99';
+    }
+    params['vote_count.gte'] = 2;
+  } else {
+    params.without_genres = '10763,10767';
+  }
+
   if (def.category === 'top_rated') {
     params.sort_by = 'vote_average.desc';
     params['vote_count.gte'] = 10;
   } else if (def.category === 'new') {
-    params.sort_by = def.mediaKey === 'movie' ? 'primary_release_date.desc' : 'first_air_date.desc';
-    params[def.mediaKey === 'movie' ? 'primary_release_date.gte' : 'first_air_date.gte'] = recentStartString;
-    params[def.mediaKey === 'movie' ? 'primary_release_date.lte' : 'first_air_date.lte'] = todayString;
+    params.sort_by = 'popularity.desc';
+    if (def.mediaKey === 'movie') {
+      params['primary_release_date.gte'] = recentStartString;
+    } else {
+      params['first_air_date.gte'] = recentStartString;
+    }
   } else if (def.category === 'genre') {
     params.sort_by = 'popularity.desc';
   }
   if (def.genre) params.with_genres = def.genre.id;
-  if (def.mediaKey === 'movie') params.include_video = 'false';
   return params;
 }
 
@@ -123,18 +149,42 @@ function toMeta(item, def) {
 }
 
 async function main() {
-  // Only delete generated catalog JSON. Other public files (collection JSON, index.html) stay intact.
   fs.rmSync(catalogRoot, { recursive: true, force: true });
   fs.mkdirSync(catalogRoot, { recursive: true });
-  console.log(`Building ${definitions.length} static catalogs from TMDB...`);
+  console.log(`Building ${definitions.length} static catalogs from TMDB (expanded to ~60 items, filtered for movies & series only)...`);
   let successes = 0;
   for (let i = 0; i < definitions.length; i++) {
     const def = definitions[i];
     try {
       const endpoint = def.mediaKey === 'movie' ? 'discover/movie' : 'discover/tv';
-      const data = await tmdbGet(endpoint, queryFor(def));
+      
+      let rawResults = [];
+      for (let p = 1; p <= 3; p++) {
+        try {
+          const data = await tmdbGet(endpoint, queryFor(def, p));
+          if (Array.isArray(data.results)) {
+            rawResults.push(...data.results);
+          }
+          if (!data.results || data.results.length < 20) break;
+          await delay(80);
+        } catch (e) {
+          if (p === 1) throw e;
+          break;
+        }
+      }
+
+      const seenIds = new Set();
+      const validItems = [];
+      for (const item of rawResults) {
+        if (!item || seenIds.has(item.id)) continue;
+        seenIds.add(item.id);
+        if (isValidItem(item, def)) {
+          validItems.push(item);
+        }
+      }
+
       const response = {
-        metas: (data.results || []).map(item => toMeta(item, def)),
+        metas: validItems.map(item => toMeta(item, def)),
         cacheMaxAge: 21_600,
         staleRevalidate: 86_400,
         staleError: 604_800
@@ -144,8 +194,7 @@ async function main() {
       fs.writeFileSync(path.join(outputDir, `${def.id}.json`), JSON.stringify(response) + '\n', 'utf8');
       successes++;
       console.log(`[${i + 1}/${definitions.length}] ${def.title}: ${response.metas.length} items`);
-      // A modest pause smooths bursts on larger catalogs and reduces 429 responses.
-      await delay(120);
+      await delay(100);
     } catch (error) {
       console.error(`Catalog failed (${def.id}): ${error.message}`);
       throw error;

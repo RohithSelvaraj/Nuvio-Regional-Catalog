@@ -86,6 +86,20 @@ async function tmdbFetch(endpoint, params, credentials) {
   throw new Error('TMDB request failed after retries');
 }
 
+const JUNK_TITLE_REGEX = /\b(short|documentary|interview|trailer|teaser|promo|press meet|super show|rave|audio launch|making of|glimpse|motion poster|behind the scenes|sneak peek)\b/i;
+
+function isValidItem(item, type, category, genreId) {
+  if (!item) return false;
+  const title = item.title || item.name || item.original_title || item.original_name || '';
+  if (!title) return false;
+  if (!item.poster_path) return false;
+  if (category !== 'genre' || genreId !== 99) {
+    if (JUNK_TITLE_REGEX.test(title)) return false;
+    if (/\((short|documentary)\)$/i.test(title.trim())) return false;
+  }
+  return true;
+}
+
 async function resolveCatalog(type, catalogIdStr, config) {
   const providersKey = config.providers?.sort().join(',') || 'all';
   const cacheKey = `${type}:${catalogIdStr}:${providersKey}`;
@@ -109,36 +123,69 @@ async function resolveCatalog(type, catalogIdStr, config) {
         const recentStartString = isoDate(recentStart);
 
         const endpoint = type === 'movie' ? 'discover/movie' : 'discover/tv';
-        const params = {
+        const baseParams = {
           include_adult: 'false',
-          page: 1,
           with_original_language: langCode,
-          sort_by: 'popularity.desc',
-          region: 'IN'
+          sort_by: 'popularity.desc'
         };
 
-        if (category === 'top_rated') {
-          params.sort_by = 'vote_average.desc';
-          params['vote_count.gte'] = 10;
-        } else if (category === 'new') {
-          params.sort_by = type === 'movie' ? 'primary_release_date.desc' : 'first_air_date.desc';
-          params[type === 'movie' ? 'primary_release_date.gte' : 'first_air_date.gte'] = recentStartString;
-          params[type === 'movie' ? 'primary_release_date.lte' : 'first_air_date.lte'] = todayString;
-        } else if (category === 'genre') {
-          params.sort_by = 'popularity.desc';
+        if (type === 'movie') {
+          baseParams.include_video = 'false';
+          if (category !== 'genre' || genreId !== 99) {
+            baseParams.without_genres = '99';
+          }
+          baseParams['vote_count.gte'] = 2;
+        } else {
+          baseParams.without_genres = '10763,10767';
         }
 
-        if (genreId) params.with_genres = genreId;
-        if (type === 'movie') params.include_video = 'false';
+        if (category === 'top_rated') {
+          baseParams.sort_by = 'vote_average.desc';
+          baseParams['vote_count.gte'] = 10;
+        } else if (category === 'new') {
+          baseParams.sort_by = 'popularity.desc';
+          if (type === 'movie') {
+            baseParams['primary_release_date.gte'] = recentStartString;
+          } else {
+            baseParams['first_air_date.gte'] = recentStartString;
+          }
+        } else if (category === 'genre') {
+          baseParams.sort_by = 'popularity.desc';
+        }
+
+        if (genreId) baseParams.with_genres = genreId;
 
         if (config.providers && config.providers.length > 0) {
-          params.with_watch_providers = config.providers.join('|');
-          params.watch_region = 'IN';
+          baseParams.with_watch_providers = config.providers.join('|');
+          baseParams.watch_region = 'IN';
         }
 
-        const data = await tmdbFetch(endpoint, params, credentials);
+        let rawResults = [];
+        for (let p = 1; p <= 3; p++) {
+          try {
+            const pageData = await tmdbFetch(endpoint, { ...baseParams, page: p }, credentials);
+            if (Array.isArray(pageData.results)) {
+              rawResults.push(...pageData.results);
+            }
+            if (!pageData.results || pageData.results.length < 20) break;
+          } catch (e) {
+            if (p === 1) throw e;
+            break;
+          }
+        }
+
+        const seenIds = new Set();
+        const validItems = [];
+        for (const item of rawResults) {
+          if (!item || seenIds.has(item.id)) continue;
+          seenIds.add(item.id);
+          if (isValidItem(item, type, category, genreId)) {
+            validItems.push(item);
+          }
+        }
+
         const result = {
-          metas: (data.results || []).map(item => toMeta(item, type)),
+          metas: validItems.map(item => toMeta(item, type)),
           cacheMaxAge: 21_600,
           staleRevalidate: 86_400,
           staleError: 604_800
@@ -206,7 +253,7 @@ function buildManifest(configStr = '', queryObj = {}) {
       type: def.type,
       id: def.id,
       name: def.title,
-      pageSize: 20
+      pageSize: 60
     })),
     behaviorHints: {
       adult: false,

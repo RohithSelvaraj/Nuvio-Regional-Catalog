@@ -119,7 +119,7 @@ export function buildPresets() {
         type: def.type,
         id: def.id,
         name: def.title,
-        pageSize: 20
+        pageSize: 60
       })),
       behaviorHints: { adult: false, configurable: true, configurationRequired: false }
     };
