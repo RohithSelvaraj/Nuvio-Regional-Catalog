@@ -66,7 +66,7 @@ You can copy and install any of these direct manifest URLs right into **Nuvio (S
    ```
 3. Set your TMDB credentials in `.env`:
    ```env
-   TMDB_API_KEY=679f12b78743a9d15432a1aeb79aa087
+   TMDB_API_KEY=YOUR_API_KEY_HERE
    ```
 4. Start the server:
    ```bash
