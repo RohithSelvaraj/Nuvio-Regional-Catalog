@@ -270,7 +270,7 @@ export function createFilteredCatalogDefinitions(config = {}) {
         const categoryName = {
           popular: 'Popular',
           top_rated: 'Top Rated',
-          new: 'Latest'
+          new: type === 'movie' ? 'Recently OTT Released' : 'Recently Released'
         }[category];
         definitions.push({
           id: catalogId(type, language.code, category),
@@ -279,7 +279,9 @@ export function createFilteredCatalogDefinitions(config = {}) {
           language,
           category,
           genre: null,
-          title: `${language.name} · ${categoryName} ${typeInfo.plural}`,
+          title: type === 'movie' && category === 'new'
+            ? `${language.name} · Recently OTT Released Movies`
+            : `${language.name} · ${categoryName} ${typeInfo.plural}`,
           dateField: typeInfo.dateField
         });
       }
