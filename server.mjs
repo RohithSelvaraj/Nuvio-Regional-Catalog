@@ -86,17 +86,37 @@ async function tmdbFetch(endpoint, params, credentials) {
   throw new Error('TMDB request failed after retries');
 }
 
-const JUNK_TITLE_REGEX = /\b(short|documentary|interview|trailer|teaser|promo|press meet|super show|rave|audio launch|making of|glimpse|motion poster|behind the scenes|sneak peek)\b/i;
+const JUNK_TITLE_REGEX = /\b(documentary|micro documentary|docuseries|short film|short|interview|trailer|teaser|promo|press meet|super show|rave|audio launch|making of|glimpse|motion poster|behind the scenes|sneak peek)\b/i;
 
 function isValidItem(item, type, category, genreId) {
   if (!item) return false;
   const title = item.title || item.name || item.original_title || item.original_name || '';
   if (!title) return false;
   if (!item.poster_path) return false;
+
+  // 1. Check if genre is documentary (99)
+  if (Array.isArray(item.genre_ids) && item.genre_ids.includes(99)) {
+    if (category !== 'genre' || genreId !== 99) return false;
+  }
+
+  // 2. Filter out documentary, making of, or shorts from title
   if (category !== 'genre' || genreId !== 99) {
     if (JUNK_TITLE_REGEX.test(title)) return false;
-    if (/\((short|documentary)\)$/i.test(title.trim())) return false;
+    if (/\((documentary|short|micro documentary)\)/i.test(title)) return false;
   }
+
+  // 3. Filter out if overview mentions documentary or making of
+  const overview = (item.overview || '').toLowerCase();
+  if (category !== 'genre' || genreId !== 99) {
+    if (/\b(micro documentary|making of)\b/i.test(overview)) return false;
+    if (overview.startsWith('a documentary') || overview.startsWith('documentary about')) return false;
+  }
+
+  // 4. Filter out zero-vote junk if popularity is negligible
+  if ((item.vote_count ?? 0) === 0 && (item.popularity ?? 0) < 1.0) {
+    return false;
+  }
+
   return true;
 }
 
@@ -118,9 +138,9 @@ async function resolveCatalog(type, catalogIdStr, config) {
         const today = new Date();
         const isoDate = d => d.toISOString().slice(0, 10);
         const todayString = isoDate(today);
-        const recentStart = new Date(today);
-        recentStart.setUTCDate(recentStart.getUTCDate() - 730);
-        const recentStartString = isoDate(recentStart);
+        const ninetyDaysAgo = new Date(today);
+        ninetyDaysAgo.setUTCDate(ninetyDaysAgo.getUTCDate() - 90);
+        const ninetyDaysAgoString = isoDate(ninetyDaysAgo);
 
         const endpoint = type === 'movie' ? 'discover/movie' : 'discover/tv';
         const baseParams = {
@@ -134,7 +154,6 @@ async function resolveCatalog(type, catalogIdStr, config) {
           if (category !== 'genre' || genreId !== 99) {
             baseParams.without_genres = '99';
           }
-          baseParams['vote_count.gte'] = 2;
         } else {
           baseParams.without_genres = '10763,10767';
         }
@@ -145,9 +164,16 @@ async function resolveCatalog(type, catalogIdStr, config) {
         } else if (category === 'new') {
           baseParams.sort_by = 'popularity.desc';
           if (type === 'movie') {
-            baseParams['primary_release_date.gte'] = recentStartString;
+            baseParams['release_date.gte'] = ninetyDaysAgoString;
+            baseParams['release_date.lte'] = todayString;
+            baseParams.with_release_type = '4';
+            baseParams.region = 'IN';
           } else {
-            baseParams['first_air_date.gte'] = recentStartString;
+            const seriesDays = langCode === 'kn' ? 180 : 90;
+            const seriesStart = new Date(today);
+            seriesStart.setUTCDate(seriesStart.getUTCDate() - seriesDays);
+            baseParams['first_air_date.gte'] = isoDate(seriesStart);
+            baseParams['first_air_date.lte'] = todayString;
           }
         } else if (category === 'genre') {
           baseParams.sort_by = 'popularity.desc';
@@ -160,8 +186,9 @@ async function resolveCatalog(type, catalogIdStr, config) {
           baseParams.watch_region = 'IN';
         }
 
+        const maxPages = category === 'genre' ? 1 : 3;
         let rawResults = [];
-        for (let p = 1; p <= 3; p++) {
+        for (let p = 1; p <= maxPages; p++) {
           try {
             const pageData = await tmdbFetch(endpoint, { ...baseParams, page: p }, credentials);
             if (Array.isArray(pageData.results)) {

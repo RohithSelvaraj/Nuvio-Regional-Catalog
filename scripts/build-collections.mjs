@@ -35,17 +35,18 @@ function collection(id, title, folders, pinToTop = true) {
 const collections = [];
 for (const language of LANGUAGES) {
   const folders = [];
-  const baseCategories = [
-    ['popular', 'Popular', '🔥'],
-    ['top_rated', 'Top Rated', '⭐'],
-    ['new', 'Latest', '🆕']
-  ];
   for (const type of ['movie', 'series']) {
     const plural = type === 'movie' ? 'Movies' : 'Series';
-    for (const [category, label, emoji] of baseCategories) {
+    for (const category of ['popular', 'top_rated', 'new']) {
+      const folderTitle = {
+        popular: `Popular ${plural}`,
+        top_rated: `Top Rated ${plural}`,
+        new: type === 'movie' ? 'Recently OTT Released Movies' : 'Recently Released Series'
+      }[category];
+      const emoji = { popular: '🔥', top_rated: '⭐', new: '🆕' }[category];
       folders.push(folder(
         `regional.${language.code}.${type}.${category}`,
-        `${label} ${plural}`,
+        folderTitle,
         [source(type, catalogId(type, language.code, category))],
         emoji
       ));

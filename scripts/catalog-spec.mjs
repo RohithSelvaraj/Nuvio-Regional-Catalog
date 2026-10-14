@@ -69,7 +69,7 @@ export function createCatalogDefinitions() {
         const categoryName = {
           popular: 'Popular',
           top_rated: 'Top Rated',
-          new: 'Latest'
+          new: type === 'movie' ? 'Recently OTT Released' : 'Recently Released'
         }[category];
         definitions.push({
           id: catalogId(type, language.code, category),
@@ -78,7 +78,9 @@ export function createCatalogDefinitions() {
           language,
           category,
           genre: null,
-          title: `${language.name} · ${categoryName} ${typeInfo.plural}`,
+          title: type === 'movie' && category === 'new'
+            ? `${language.name} · Recently OTT Released Movies`
+            : `${language.name} · ${categoryName} ${typeInfo.plural}`,
           dateField: typeInfo.dateField
         });
       }
@@ -140,10 +142,35 @@ export function parseConfig(input) {
       } catch {}
     }
 
-    const normalized = trimmed.replace(/[;|]/g, '&');
-    const params = new URLSearchParams(normalized);
-    for (const [k, v] of params.entries()) {
-      query[k.toLowerCase()] = v;
+    if (!trimmed.includes('=')) {
+      const parts = trimmed.toLowerCase().split(/[-_,+&]/).map(s => s.trim()).filter(Boolean);
+      const nameToCode = {
+        tamil: 'ta', ta: 'ta',
+        telugu: 'te', te: 'te',
+        malayalam: 'ml', ml: 'ml',
+        kannada: 'kn', kn: 'kn',
+        hindi: 'hi', hi: 'hi'
+      };
+      const langs = [];
+      const types = [];
+      const cats = [];
+      for (const p of parts) {
+        if (nameToCode[p]) langs.push(nameToCode[p]);
+        else if (p === 'movie' || p === 'movies') types.push('movie');
+        else if (p === 'series') types.push('series');
+        else if (p === 'popular') cats.push('popular');
+        else if (p === 'top' || p === 'top_rated' || p === 'toprated') cats.push('top_rated');
+        else if (p === 'new' || p === 'latest' || p === 'recent' || p === 'ott') cats.push('new');
+      }
+      if (langs.length) query.lang = Array.from(new Set(langs)).join(',');
+      if (types.length) query.types = Array.from(new Set(types)).join(',');
+      if (cats.length) query.cats = Array.from(new Set(cats)).join(',');
+    } else {
+      const normalized = trimmed.replace(/[;|]/g, '&');
+      const params = new URLSearchParams(normalized);
+      for (const [k, v] of params.entries()) {
+        query[k.toLowerCase()] = v;
+      }
     }
   }
 

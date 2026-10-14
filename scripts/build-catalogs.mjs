@@ -42,9 +42,9 @@ const imageBase = 'https://image.tmdb.org/t/p';
 const today = new Date();
 const isoDate = date => date.toISOString().slice(0, 10);
 const todayString = isoDate(today);
-const recentStart = new Date(today);
-recentStart.setUTCDate(recentStart.getUTCDate() - 730);
-const recentStartString = isoDate(recentStart);
+const ninetyDaysAgo = new Date(today);
+ninetyDaysAgo.setUTCDate(ninetyDaysAgo.getUTCDate() - 90);
+const ninetyDaysAgoString = isoDate(ninetyDaysAgo);
 
 function buildUrl(endpoint, params) {
   const url = new URL(`https://api.themoviedb.org/3/${endpoint}`);
@@ -65,35 +65,58 @@ async function tmdbGet(endpoint, params) {
     try {
       response = await fetch(url, { headers, signal: AbortSignal.timeout(30_000) });
     } catch (error) {
-      if (attempt === 4) throw new Error(`TMDB network request failed for ${endpoint}: ${error.message}`);
-      await delay(1000 * (attempt + 1));
+      if (attempt === 4) {
+        console.warn(`[TMDB Network Warning] ${endpoint}: ${error.message}`);
+        return { results: [] };
+      }
+      await delay(1200 * (attempt + 1));
       continue;
     }
     if (response.ok) return response.json();
     if ((response.status === 429 || response.status >= 500) && attempt < 4) {
       const retryAfter = Number(response.headers.get('retry-after'));
-      await delay(Number.isFinite(retryAfter) && retryAfter > 0 ? Math.min(retryAfter * 1000, 15_000) : 1000 * (attempt + 1));
+      await delay(Number.isFinite(retryAfter) && retryAfter > 0 ? Math.min(retryAfter * 1000, 15_000) : 1500 * (attempt + 1));
       continue;
     }
-    // Never print a full URL: the v3 API key is a query parameter for that auth mode.
-    throw new Error(`TMDB returned HTTP ${response.status} for ${endpoint}. Check your key and TMDB API access.`);
+    console.warn(`[TMDB Warning] HTTP ${response.status} for ${endpoint}`);
+    return { results: [] };
   }
-  throw new Error(`TMDB request failed after retries: ${endpoint}`);
+  return { results: [] };
 }
 
 function delay(ms) { return new Promise(resolve => setTimeout(resolve, ms)); }
 
-const JUNK_TITLE_REGEX = /\b(short|documentary|interview|trailer|teaser|promo|press meet|super show|rave|audio launch|making of|glimpse|motion poster|behind the scenes|sneak peek)\b/i;
+const JUNK_TITLE_REGEX = /\b(documentary|micro documentary|docuseries|short film|short|interview|trailer|teaser|promo|press meet|super show|rave|audio launch|making of|glimpse|motion poster|behind the scenes|sneak peek)\b/i;
 
 function isValidItem(item, def) {
   if (!item) return false;
   const title = item.title || item.name || item.original_title || item.original_name || '';
   if (!title) return false;
   if (!item.poster_path) return false;
+
+  // 1. Check if genre is documentary (99)
+  if (Array.isArray(item.genre_ids) && item.genre_ids.includes(99)) {
+    if (def.category !== 'genre' || def.genre?.id !== 99) return false;
+  }
+
+  // 2. Filter out documentary, making of, or shorts from title
   if (def.category !== 'genre' || def.genre?.id !== 99) {
     if (JUNK_TITLE_REGEX.test(title)) return false;
-    if (/\((short|documentary)\)$/i.test(title.trim())) return false;
+    if (/\((documentary|short|micro documentary)\)/i.test(title)) return false;
   }
+
+  // 3. Filter out if overview mentions documentary or making of
+  const overview = (item.overview || '').toLowerCase();
+  if (def.category !== 'genre' || def.genre?.id !== 99) {
+    if (/\b(micro documentary|making of)\b/i.test(overview)) return false;
+    if (overview.startsWith('a documentary') || overview.startsWith('documentary about')) return false;
+  }
+
+  // 4. Filter out zero-vote junk if popularity is negligible
+  if ((item.vote_count ?? 0) === 0 && (item.popularity ?? 0) < 1.0) {
+    return false;
+  }
+
   return true;
 }
 
@@ -110,7 +133,6 @@ function queryFor(def, page = 1) {
     if (def.category !== 'genre' || def.genre?.id !== 99) {
       params.without_genres = '99';
     }
-    params['vote_count.gte'] = 2;
   } else {
     params.without_genres = '10763,10767';
   }
@@ -121,9 +143,16 @@ function queryFor(def, page = 1) {
   } else if (def.category === 'new') {
     params.sort_by = 'popularity.desc';
     if (def.mediaKey === 'movie') {
-      params['primary_release_date.gte'] = recentStartString;
+      params['release_date.gte'] = ninetyDaysAgoString;
+      params['release_date.lte'] = todayString;
+      params.with_release_type = '4';
+      params.region = 'IN';
     } else {
-      params['first_air_date.gte'] = recentStartString;
+      const seriesDays = def.language.code === 'kn' ? 180 : 90;
+      const seriesStart = new Date(today);
+      seriesStart.setUTCDate(seriesStart.getUTCDate() - seriesDays);
+      params['first_air_date.gte'] = isoDate(seriesStart);
+      params['first_air_date.lte'] = todayString;
     }
   } else if (def.category === 'genre') {
     params.sort_by = 'popularity.desc';
@@ -158,17 +187,18 @@ async function main() {
     try {
       const endpoint = def.mediaKey === 'movie' ? 'discover/movie' : 'discover/tv';
       
+      const maxPages = def.category === 'genre' ? 1 : 3;
       let rawResults = [];
-      for (let p = 1; p <= 3; p++) {
+      for (let p = 1; p <= maxPages; p++) {
         try {
           const data = await tmdbGet(endpoint, queryFor(def, p));
           if (Array.isArray(data.results)) {
             rawResults.push(...data.results);
           }
           if (!data.results || data.results.length < 20) break;
-          await delay(80);
+          await delay(100);
         } catch (e) {
-          if (p === 1) throw e;
+          if (p === 1) break;
           break;
         }
       }
@@ -194,10 +224,12 @@ async function main() {
       fs.writeFileSync(path.join(outputDir, `${def.id}.json`), JSON.stringify(response) + '\n', 'utf8');
       successes++;
       console.log(`[${i + 1}/${definitions.length}] ${def.title}: ${response.metas.length} items`);
-      await delay(100);
+      await delay(120);
     } catch (error) {
       console.error(`Catalog failed (${def.id}): ${error.message}`);
-      throw error;
+      const outputDir = path.join(catalogRoot, def.type);
+      fs.mkdirSync(outputDir, { recursive: true });
+      fs.writeFileSync(path.join(outputDir, `${def.id}.json`), JSON.stringify({ metas: [], cacheMaxAge: 3600 }) + '\n', 'utf8');
     }
   }
   fs.writeFileSync(path.join(publicDir, '.nojekyll'), '', 'utf8');

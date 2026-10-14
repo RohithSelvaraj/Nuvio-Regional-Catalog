@@ -229,7 +229,7 @@
       },
       {
         "id": "regional.ta.movie.new",
-        "title": "Latest Movies",
+        "title": "Recently OTT Released Movies",
         "tileShape": "POSTER",
         "hideTitle": false,
         "focusGifEnabled": false,
@@ -544,7 +544,7 @@
       },
       {
         "id": "regional.ta.series.new",
-        "title": "Latest Series",
+        "title": "Recently Released Series",
         "tileShape": "POSTER",
         "hideTitle": false,
         "focusGifEnabled": false,
@@ -839,7 +839,7 @@
       },
       {
         "id": "regional.te.movie.new",
-        "title": "Latest Movies",
+        "title": "Recently OTT Released Movies",
         "tileShape": "POSTER",
         "hideTitle": false,
         "focusGifEnabled": false,
@@ -1154,7 +1154,7 @@
       },
       {
         "id": "regional.te.series.new",
-        "title": "Latest Series",
+        "title": "Recently Released Series",
         "tileShape": "POSTER",
         "hideTitle": false,
         "focusGifEnabled": false,
@@ -1449,7 +1449,7 @@
       },
       {
         "id": "regional.ml.movie.new",
-        "title": "Latest Movies",
+        "title": "Recently OTT Released Movies",
         "tileShape": "POSTER",
         "hideTitle": false,
         "focusGifEnabled": false,
@@ -1764,7 +1764,7 @@
       },
       {
         "id": "regional.ml.series.new",
-        "title": "Latest Series",
+        "title": "Recently Released Series",
         "tileShape": "POSTER",
         "hideTitle": false,
         "focusGifEnabled": false,
@@ -2059,7 +2059,7 @@
       },
       {
         "id": "regional.kn.movie.new",
-        "title": "Latest Movies",
+        "title": "Recently OTT Released Movies",
         "tileShape": "POSTER",
         "hideTitle": false,
         "focusGifEnabled": false,
@@ -2374,7 +2374,7 @@
       },
       {
         "id": "regional.kn.series.new",
-        "title": "Latest Series",
+        "title": "Recently Released Series",
         "tileShape": "POSTER",
         "hideTitle": false,
         "focusGifEnabled": false,

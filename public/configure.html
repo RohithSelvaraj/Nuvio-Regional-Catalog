@@ -1055,8 +1055,8 @@
       },
       {
         id: 'new',
-        title: '⚡ Latest Regional Releases',
-        desc: 'Freshly released regional movies and newly aired episodes.',
+        title: '⚡ Recently OTT Released (All Languages)',
+        desc: 'Recently OTT released movies and newly aired episodes in the last 2-3 months.',
         subpath: 'new/manifest.json',
         count: '8 Catalogs',
         langs: ['ta', 'te', 'ml', 'kn'],
@@ -1081,6 +1081,150 @@
         count: '76 Catalogs',
         langs: ['ta', 'te', 'ml', 'kn'],
         types: ['series'],
+        cats: ['popular', 'top_rated', 'new', 'genre']
+      },
+      // Language + Movies Only
+      {
+        id: 'tamil-movies',
+        title: '🟠🎬 Tamil Movies Only',
+        desc: 'Popular, Top Rated, Recently OTT Released, and all genre shelves for Tamil cinema.',
+        subpath: 'tamil-movies/manifest.json',
+        count: '21 Catalogs',
+        langs: ['ta'],
+        types: ['movie'],
+        cats: ['popular', 'top_rated', 'new', 'genre']
+      },
+      {
+        id: 'telugu-movies',
+        title: '🟣🎬 Telugu Movies Only',
+        desc: 'Popular, Top Rated, Recently OTT Released, and all genre shelves for Telugu cinema.',
+        subpath: 'telugu-movies/manifest.json',
+        count: '21 Catalogs',
+        langs: ['te'],
+        types: ['movie'],
+        cats: ['popular', 'top_rated', 'new', 'genre']
+      },
+      {
+        id: 'malayalam-movies',
+        title: '🟢🎬 Malayalam Movies Only',
+        desc: 'Popular, Top Rated, Recently OTT Released, and all genre shelves for Malayalam cinema.',
+        subpath: 'malayalam-movies/manifest.json',
+        count: '21 Catalogs',
+        langs: ['ml'],
+        types: ['movie'],
+        cats: ['popular', 'top_rated', 'new', 'genre']
+      },
+      {
+        id: 'kannada-movies',
+        title: '🔵🎬 Kannada Movies Only',
+        desc: 'Popular, Top Rated, Recently OTT Released, and all genre shelves for Kannada cinema.',
+        subpath: 'kannada-movies/manifest.json',
+        count: '21 Catalogs',
+        langs: ['kn'],
+        types: ['movie'],
+        cats: ['popular', 'top_rated', 'new', 'genre']
+      },
+      // Language + Series Only
+      {
+        id: 'tamil-series',
+        title: '🟠📺 Tamil TV Series Only',
+        desc: 'Tamil serials and web series without movies.',
+        subpath: 'tamil-series/manifest.json',
+        count: '19 Catalogs',
+        langs: ['ta'],
+        types: ['series'],
+        cats: ['popular', 'top_rated', 'new', 'genre']
+      },
+      {
+        id: 'telugu-series',
+        title: '🟣📺 Telugu TV Series Only',
+        desc: 'Telugu serials and web series without movies.',
+        subpath: 'telugu-series/manifest.json',
+        count: '19 Catalogs',
+        langs: ['te'],
+        types: ['series'],
+        cats: ['popular', 'top_rated', 'new', 'genre']
+      },
+      {
+        id: 'malayalam-series',
+        title: '🟢📺 Malayalam TV Series Only',
+        desc: 'Malayalam serials and web series without movies.',
+        subpath: 'malayalam-series/manifest.json',
+        count: '19 Catalogs',
+        langs: ['ml'],
+        types: ['series'],
+        cats: ['popular', 'top_rated', 'new', 'genre']
+      },
+      {
+        id: 'kannada-series',
+        title: '🔵📺 Kannada TV Series Only',
+        desc: 'Kannada serials and web series without movies.',
+        subpath: 'kannada-series/manifest.json',
+        count: '19 Catalogs',
+        langs: ['kn'],
+        types: ['series'],
+        cats: ['popular', 'top_rated', 'new', 'genre']
+      },
+      // Language + Recent OTT Releases
+      {
+        id: 'tamil-ott',
+        title: '🟠⚡ Tamil Recently OTT Released',
+        desc: 'Tamil movies and series released on OTT in the last 2-3 months.',
+        subpath: 'tamil-ott/manifest.json',
+        count: '2 Catalogs',
+        langs: ['ta'],
+        types: ['movie', 'series'],
+        cats: ['new']
+      },
+      {
+        id: 'telugu-ott',
+        title: '🟣⚡ Telugu Recently OTT Released',
+        desc: 'Telugu movies and series released on OTT in the last 2-3 months.',
+        subpath: 'telugu-ott/manifest.json',
+        count: '2 Catalogs',
+        langs: ['te'],
+        types: ['movie', 'series'],
+        cats: ['new']
+      },
+      {
+        id: 'malayalam-ott',
+        title: '🟢⚡ Malayalam Recently OTT Released',
+        desc: 'Malayalam movies and series released on OTT in the last 2-3 months.',
+        subpath: 'malayalam-ott/manifest.json',
+        count: '2 Catalogs',
+        langs: ['ml'],
+        types: ['movie', 'series'],
+        cats: ['new']
+      },
+      {
+        id: 'kannada-ott',
+        title: '🔵⚡ Kannada Recently OTT Released',
+        desc: 'Kannada movies and series released on OTT in the last 2-3 months.',
+        subpath: 'kannada-ott/manifest.json',
+        count: '2 Catalogs',
+        langs: ['kn'],
+        types: ['movie', 'series'],
+        cats: ['new']
+      },
+      // Additional Language Mixes
+      {
+        id: 'tamil-malayalam',
+        title: '🟠🟢 Tamil & Malayalam Cinema',
+        desc: 'Kollywood and Mollywood catalogs combined together.',
+        subpath: 'tamil-malayalam/manifest.json',
+        count: '80 Catalogs',
+        langs: ['ta', 'ml'],
+        types: ['movie', 'series'],
+        cats: ['popular', 'top_rated', 'new', 'genre']
+      },
+      {
+        id: 'telugu-kannada',
+        title: '🟣🔵 Telugu & Kannada Cinema',
+        desc: 'Tollywood and Sandalwood catalogs combined together.',
+        subpath: 'telugu-kannada/manifest.json',
+        count: '80 Catalogs',
+        langs: ['te', 'kn'],
+        types: ['movie', 'series'],
         cats: ['popular', 'top_rated', 'new', 'genre']
       }
     ];
@@ -1107,8 +1251,11 @@
         activeBase = GITHUB_PAGES_BASE;
         btnGh.classList.add('active');
         btnCustom.classList.remove('active');
+      } else if (isLocalOrLive) {
+        activeBase = loc.origin + (loc.pathname.startsWith('/Nuvio-Regional-Catalog') ? '/Nuvio-Regional-Catalog' : '');
+        btnCustom.classList.add('active');
+        btnGh.classList.remove('active');
       } else {
-        // Default to GitHub Pages link as requested by user
         activeBase = GITHUB_PAGES_BASE;
       }
 
