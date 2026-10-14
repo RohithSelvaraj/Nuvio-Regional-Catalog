@@ -22,6 +22,8 @@ export function loadLocalEnv() {
   }
 }
 
+export const DEFAULT_TMDB_API_KEY = '679f12b78743a9d15432a1aeb79aa087';
+
 export function getTmdbCredentials() {
   loadLocalEnv();
   const token = (process.env.TMDB_READ_ACCESS_TOKEN || '').trim();
@@ -29,5 +31,6 @@ export function getTmdbCredentials() {
   const validValue = value => value && !/^PASTE_YOUR_/i.test(value) && !/^your[_ -]/i.test(value);
   if (validValue(token)) return { kind: 'bearer', value: token };
   if (validValue(apiKey)) return { kind: 'api_key', value: apiKey };
+  if (DEFAULT_TMDB_API_KEY) return { kind: 'api_key', value: DEFAULT_TMDB_API_KEY };
   return null;
 }
