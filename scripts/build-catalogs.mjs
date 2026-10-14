@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import { ROOT, getTmdbCredentials } from './config.mjs';
+import { ROOT, getTmdbCredentials, DEFAULT_TMDB_API_KEY } from './config.mjs';
 import { ADDON_ID, ADDON_NAME, ADDON_VERSION, createCatalogDefinitions, genreNames } from './catalog-spec.mjs';
 
 const publicDir = path.join(ROOT, 'public');
@@ -76,6 +76,14 @@ async function tmdbGet(endpoint, params) {
       continue;
     }
     if (response.ok) return response.json();
+    if (response.status === 401 && credentials.value !== DEFAULT_TMDB_API_KEY) {
+      console.warn(`[TMDB Auth Warning] Key returned 401. Retrying with default API key...`);
+      credentials.kind = 'api_key';
+      credentials.value = DEFAULT_TMDB_API_KEY;
+      url.searchParams.set('api_key', DEFAULT_TMDB_API_KEY);
+      delete headers.Authorization;
+      continue;
+    }
     if ((response.status === 429 || response.status >= 500) && attempt < 4) {
       const retryAfter = Number(response.headers.get('retry-after'));
       await delay(Number.isFinite(retryAfter) && retryAfter > 0 ? Math.min(retryAfter * 1000, 15_000) : 1500 * (attempt + 1));

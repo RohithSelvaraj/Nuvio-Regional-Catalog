@@ -3,7 +3,7 @@ import cors from 'cors';
 import fs from 'node:fs';
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
-import { ROOT, getTmdbCredentials } from './scripts/config.mjs';
+import { ROOT, getTmdbCredentials, DEFAULT_TMDB_API_KEY } from './scripts/config.mjs';
 import {
   ADDON_ID,
   ADDON_NAME,
@@ -76,6 +76,13 @@ async function tmdbFetch(endpoint, params, credentials) {
     try {
       const response = await fetch(url, { headers, signal: AbortSignal.timeout(12_000) });
       if (response.ok) return await response.json();
+      if (response.status === 401 && credentials?.value !== DEFAULT_TMDB_API_KEY) {
+        credentials.kind = 'api_key';
+        credentials.value = DEFAULT_TMDB_API_KEY;
+        url.searchParams.set('api_key', DEFAULT_TMDB_API_KEY);
+        delete headers.Authorization;
+        continue;
+      }
       if ((response.status === 429 || response.status >= 500) && attempt < 2) {
         await new Promise(r => setTimeout(r, 1200 * (attempt + 1)));
         continue;
