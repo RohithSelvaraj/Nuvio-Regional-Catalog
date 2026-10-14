@@ -1,0 +1,136 @@
+{
+  "id": "org.nuvio.regionalcatalog",
+  "version": "1.0.0",
+  "name": "Nuvio Regional Catalog · Telugu Series Only",
+  "description": "Telugu TV series only across Popular, Top Rated, Recent, and genres.",
+  "resources": [
+    "catalog"
+  ],
+  "types": [
+    "series"
+  ],
+  "idPrefixes": [
+    "tmdb:"
+  ],
+  "catalogs": [
+    {
+      "type": "series",
+      "id": "regional.series.te.popular",
+      "name": "Telugu · Popular Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.te.top_rated",
+      "name": "Telugu · Top Rated Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.te.new",
+      "name": "Telugu · Recently Released Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.te.genre.10759",
+      "name": "Telugu · Action & Adventure Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.te.genre.16",
+      "name": "Telugu · Animation Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.te.genre.35",
+      "name": "Telugu · Comedy Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.te.genre.80",
+      "name": "Telugu · Crime Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.te.genre.99",
+      "name": "Telugu · Documentary Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.te.genre.18",
+      "name": "Telugu · Drama Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.te.genre.10751",
+      "name": "Telugu · Family Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.te.genre.10762",
+      "name": "Telugu · Kids Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.te.genre.9648",
+      "name": "Telugu · Mystery Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.te.genre.10763",
+      "name": "Telugu · News Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.te.genre.10764",
+      "name": "Telugu · Reality Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.te.genre.10765",
+      "name": "Telugu · Sci-Fi & Fantasy Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.te.genre.10766",
+      "name": "Telugu · Soap Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.te.genre.10767",
+      "name": "Telugu · Talk Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.te.genre.10768",
+      "name": "Telugu · War & Politics Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.te.genre.37",
+      "name": "Telugu · Western Series",
+      "pageSize": 60
+    }
+  ],
+  "behaviorHints": {
+    "adult": false,
+    "configurable": true,
+    "configurationRequired": false
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "id": "org.nuvio.regionalcatalog",
+  "version": "1.0.0",
+  "name": "Nuvio Regional Catalog · Recently OTT Released",
+  "description": "Recently OTT released movies and newly aired episodes in the last 2-3 months.",
+  "resources": [
+    "catalog"
+  ],
+  "types": [
+    "movie",
+    "series"
+  ],
+  "idPrefixes": [
+    "tmdb:"
+  ],
+  "catalogs": [
+    {
+      "type": "movie",
+      "id": "regional.movie.ta.new",
+      "name": "Tamil · Recently OTT Released Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ta.new",
+      "name": "Tamil · Recently Released Series",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.te.new",
+      "name": "Telugu · Recently OTT Released Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.te.new",
+      "name": "Telugu · Recently Released Series",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ml.new",
+      "name": "Malayalam · Recently OTT Released Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ml.new",
+      "name": "Malayalam · Recently Released Series",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.kn.new",
+      "name": "Kannada · Recently OTT Released Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.kn.new",
+      "name": "Kannada · Recently Released Series",
+      "pageSize": 60
+    }
+  ],
+  "behaviorHints": {
+    "adult": false,
+    "configurable": true,
+    "configurationRequired": false
+  }
+}

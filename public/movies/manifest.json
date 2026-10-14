@@ -1,0 +1,526 @@
+{
+  "id": "org.nuvio.regionalcatalog",
+  "version": "1.0.0",
+  "name": "Nuvio Regional Catalog · Movies Only",
+  "description": "Regional Indian movies across Tamil, Telugu, Malayalam and Kannada.",
+  "resources": [
+    "catalog"
+  ],
+  "types": [
+    "movie"
+  ],
+  "idPrefixes": [
+    "tmdb:"
+  ],
+  "catalogs": [
+    {
+      "type": "movie",
+      "id": "regional.movie.ta.popular",
+      "name": "Tamil · Popular Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ta.top_rated",
+      "name": "Tamil · Top Rated Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ta.new",
+      "name": "Tamil · Recently OTT Released Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ta.genre.28",
+      "name": "Tamil · Action Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ta.genre.12",
+      "name": "Tamil · Adventure Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ta.genre.16",
+      "name": "Tamil · Animation Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ta.genre.35",
+      "name": "Tamil · Comedy Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ta.genre.80",
+      "name": "Tamil · Crime Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ta.genre.99",
+      "name": "Tamil · Documentary Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ta.genre.18",
+      "name": "Tamil · Drama Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ta.genre.10751",
+      "name": "Tamil · Family Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ta.genre.14",
+      "name": "Tamil · Fantasy Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ta.genre.36",
+      "name": "Tamil · History Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ta.genre.27",
+      "name": "Tamil · Horror Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ta.genre.10402",
+      "name": "Tamil · Music Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ta.genre.9648",
+      "name": "Tamil · Mystery Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ta.genre.10749",
+      "name": "Tamil · Romance Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ta.genre.878",
+      "name": "Tamil · Science Fiction Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ta.genre.53",
+      "name": "Tamil · Thriller Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ta.genre.10752",
+      "name": "Tamil · War Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ta.genre.37",
+      "name": "Tamil · Western Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.te.popular",
+      "name": "Telugu · Popular Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.te.top_rated",
+      "name": "Telugu · Top Rated Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.te.new",
+      "name": "Telugu · Recently OTT Released Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.te.genre.28",
+      "name": "Telugu · Action Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.te.genre.12",
+      "name": "Telugu · Adventure Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.te.genre.16",
+      "name": "Telugu · Animation Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.te.genre.35",
+      "name": "Telugu · Comedy Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.te.genre.80",
+      "name": "Telugu · Crime Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.te.genre.99",
+      "name": "Telugu · Documentary Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.te.genre.18",
+      "name": "Telugu · Drama Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.te.genre.10751",
+      "name": "Telugu · Family Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.te.genre.14",
+      "name": "Telugu · Fantasy Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.te.genre.36",
+      "name": "Telugu · History Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.te.genre.27",
+      "name": "Telugu · Horror Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.te.genre.10402",
+      "name": "Telugu · Music Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.te.genre.9648",
+      "name": "Telugu · Mystery Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.te.genre.10749",
+      "name": "Telugu · Romance Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.te.genre.878",
+      "name": "Telugu · Science Fiction Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.te.genre.53",
+      "name": "Telugu · Thriller Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.te.genre.10752",
+      "name": "Telugu · War Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.te.genre.37",
+      "name": "Telugu · Western Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ml.popular",
+      "name": "Malayalam · Popular Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ml.top_rated",
+      "name": "Malayalam · Top Rated Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ml.new",
+      "name": "Malayalam · Recently OTT Released Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ml.genre.28",
+      "name": "Malayalam · Action Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ml.genre.12",
+      "name": "Malayalam · Adventure Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ml.genre.16",
+      "name": "Malayalam · Animation Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ml.genre.35",
+      "name": "Malayalam · Comedy Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ml.genre.80",
+      "name": "Malayalam · Crime Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ml.genre.99",
+      "name": "Malayalam · Documentary Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ml.genre.18",
+      "name": "Malayalam · Drama Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ml.genre.10751",
+      "name": "Malayalam · Family Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ml.genre.14",
+      "name": "Malayalam · Fantasy Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ml.genre.36",
+      "name": "Malayalam · History Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ml.genre.27",
+      "name": "Malayalam · Horror Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ml.genre.10402",
+      "name": "Malayalam · Music Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ml.genre.9648",
+      "name": "Malayalam · Mystery Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ml.genre.10749",
+      "name": "Malayalam · Romance Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ml.genre.878",
+      "name": "Malayalam · Science Fiction Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ml.genre.53",
+      "name": "Malayalam · Thriller Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ml.genre.10752",
+      "name": "Malayalam · War Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ml.genre.37",
+      "name": "Malayalam · Western Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.kn.popular",
+      "name": "Kannada · Popular Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.kn.top_rated",
+      "name": "Kannada · Top Rated Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.kn.new",
+      "name": "Kannada · Recently OTT Released Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.kn.genre.28",
+      "name": "Kannada · Action Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.kn.genre.12",
+      "name": "Kannada · Adventure Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.kn.genre.16",
+      "name": "Kannada · Animation Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.kn.genre.35",
+      "name": "Kannada · Comedy Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.kn.genre.80",
+      "name": "Kannada · Crime Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.kn.genre.99",
+      "name": "Kannada · Documentary Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.kn.genre.18",
+      "name": "Kannada · Drama Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.kn.genre.10751",
+      "name": "Kannada · Family Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.kn.genre.14",
+      "name": "Kannada · Fantasy Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.kn.genre.36",
+      "name": "Kannada · History Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.kn.genre.27",
+      "name": "Kannada · Horror Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.kn.genre.10402",
+      "name": "Kannada · Music Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.kn.genre.9648",
+      "name": "Kannada · Mystery Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.kn.genre.10749",
+      "name": "Kannada · Romance Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.kn.genre.878",
+      "name": "Kannada · Science Fiction Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.kn.genre.53",
+      "name": "Kannada · Thriller Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.kn.genre.10752",
+      "name": "Kannada · War Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.kn.genre.37",
+      "name": "Kannada · Western Movies",
+      "pageSize": 60
+    }
+  ],
+  "behaviorHints": {
+    "adult": false,
+    "configurable": true,
+    "configurationRequired": false
+  }
+}

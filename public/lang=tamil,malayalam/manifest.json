@@ -1,0 +1,503 @@
+{
+  "id": "org.nuvio.regionalcatalog",
+  "version": "1.0.0",
+  "name": "Nuvio Regional Catalog · Tamil & Malayalam",
+  "description": "Tamil and Malayalam movies and series discovery for Nuvio, powered by TMDB.",
+  "resources": [
+    "catalog"
+  ],
+  "types": [
+    "movie",
+    "series"
+  ],
+  "idPrefixes": [
+    "tmdb:"
+  ],
+  "catalogs": [
+    {
+      "type": "movie",
+      "id": "regional.movie.ta.popular",
+      "name": "Tamil · Popular Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ta.top_rated",
+      "name": "Tamil · Top Rated Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ta.new",
+      "name": "Tamil · Recently OTT Released Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ta.genre.28",
+      "name": "Tamil · Action Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ta.genre.12",
+      "name": "Tamil · Adventure Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ta.genre.16",
+      "name": "Tamil · Animation Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ta.genre.35",
+      "name": "Tamil · Comedy Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ta.genre.80",
+      "name": "Tamil · Crime Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ta.genre.99",
+      "name": "Tamil · Documentary Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ta.genre.18",
+      "name": "Tamil · Drama Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ta.genre.10751",
+      "name": "Tamil · Family Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ta.genre.14",
+      "name": "Tamil · Fantasy Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ta.genre.36",
+      "name": "Tamil · History Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ta.genre.27",
+      "name": "Tamil · Horror Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ta.genre.10402",
+      "name": "Tamil · Music Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ta.genre.9648",
+      "name": "Tamil · Mystery Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ta.genre.10749",
+      "name": "Tamil · Romance Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ta.genre.878",
+      "name": "Tamil · Science Fiction Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ta.genre.53",
+      "name": "Tamil · Thriller Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ta.genre.10752",
+      "name": "Tamil · War Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ta.genre.37",
+      "name": "Tamil · Western Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ta.popular",
+      "name": "Tamil · Popular Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ta.top_rated",
+      "name": "Tamil · Top Rated Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ta.new",
+      "name": "Tamil · Recently Released Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ta.genre.10759",
+      "name": "Tamil · Action & Adventure Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ta.genre.16",
+      "name": "Tamil · Animation Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ta.genre.35",
+      "name": "Tamil · Comedy Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ta.genre.80",
+      "name": "Tamil · Crime Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ta.genre.99",
+      "name": "Tamil · Documentary Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ta.genre.18",
+      "name": "Tamil · Drama Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ta.genre.10751",
+      "name": "Tamil · Family Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ta.genre.10762",
+      "name": "Tamil · Kids Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ta.genre.9648",
+      "name": "Tamil · Mystery Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ta.genre.10763",
+      "name": "Tamil · News Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ta.genre.10764",
+      "name": "Tamil · Reality Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ta.genre.10765",
+      "name": "Tamil · Sci-Fi & Fantasy Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ta.genre.10766",
+      "name": "Tamil · Soap Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ta.genre.10767",
+      "name": "Tamil · Talk Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ta.genre.10768",
+      "name": "Tamil · War & Politics Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ta.genre.37",
+      "name": "Tamil · Western Series",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ml.popular",
+      "name": "Malayalam · Popular Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ml.top_rated",
+      "name": "Malayalam · Top Rated Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ml.new",
+      "name": "Malayalam · Recently OTT Released Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ml.genre.28",
+      "name": "Malayalam · Action Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ml.genre.12",
+      "name": "Malayalam · Adventure Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ml.genre.16",
+      "name": "Malayalam · Animation Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ml.genre.35",
+      "name": "Malayalam · Comedy Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ml.genre.80",
+      "name": "Malayalam · Crime Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ml.genre.99",
+      "name": "Malayalam · Documentary Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ml.genre.18",
+      "name": "Malayalam · Drama Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ml.genre.10751",
+      "name": "Malayalam · Family Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ml.genre.14",
+      "name": "Malayalam · Fantasy Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ml.genre.36",
+      "name": "Malayalam · History Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ml.genre.27",
+      "name": "Malayalam · Horror Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ml.genre.10402",
+      "name": "Malayalam · Music Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ml.genre.9648",
+      "name": "Malayalam · Mystery Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ml.genre.10749",
+      "name": "Malayalam · Romance Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ml.genre.878",
+      "name": "Malayalam · Science Fiction Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ml.genre.53",
+      "name": "Malayalam · Thriller Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ml.genre.10752",
+      "name": "Malayalam · War Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ml.genre.37",
+      "name": "Malayalam · Western Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ml.popular",
+      "name": "Malayalam · Popular Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ml.top_rated",
+      "name": "Malayalam · Top Rated Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ml.new",
+      "name": "Malayalam · Recently Released Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ml.genre.10759",
+      "name": "Malayalam · Action & Adventure Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ml.genre.16",
+      "name": "Malayalam · Animation Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ml.genre.35",
+      "name": "Malayalam · Comedy Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ml.genre.80",
+      "name": "Malayalam · Crime Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ml.genre.99",
+      "name": "Malayalam · Documentary Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ml.genre.18",
+      "name": "Malayalam · Drama Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ml.genre.10751",
+      "name": "Malayalam · Family Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ml.genre.10762",
+      "name": "Malayalam · Kids Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ml.genre.9648",
+      "name": "Malayalam · Mystery Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ml.genre.10763",
+      "name": "Malayalam · News Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ml.genre.10764",
+      "name": "Malayalam · Reality Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ml.genre.10765",
+      "name": "Malayalam · Sci-Fi & Fantasy Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ml.genre.10766",
+      "name": "Malayalam · Soap Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ml.genre.10767",
+      "name": "Malayalam · Talk Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ml.genre.10768",
+      "name": "Malayalam · War & Politics Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ml.genre.37",
+      "name": "Malayalam · Western Series",
+      "pageSize": 60
+    }
+  ],
+  "behaviorHints": {
+    "adult": false,
+    "configurable": true,
+    "configurationRequired": false
+  }
+}

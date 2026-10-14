@@ -1,0 +1,35 @@
+{
+  "id": "org.nuvio.regionalcatalog",
+  "version": "1.0.0",
+  "name": "Nuvio Regional Catalog · Tamil Recently OTT Released",
+  "description": "Tamil movies and series released on OTT in the last 2-3 months.",
+  "resources": [
+    "catalog"
+  ],
+  "types": [
+    "movie",
+    "series"
+  ],
+  "idPrefixes": [
+    "tmdb:"
+  ],
+  "catalogs": [
+    {
+      "type": "movie",
+      "id": "regional.movie.ta.new",
+      "name": "Tamil · Recently OTT Released Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ta.new",
+      "name": "Tamil · Recently Released Series",
+      "pageSize": 60
+    }
+  ],
+  "behaviorHints": {
+    "adult": false,
+    "configurable": true,
+    "configurationRequired": false
+  }
+}

@@ -3,13 +3,6 @@
 .env.*
 !.env.example
 
-# Local output (generated again during GitHub Pages deployment)
-public/manifest.json
-public/catalog/
-public/*/catalog/
-public/*/manifest.json
-public/*/collections.json
-
 # Node / editor clutter
 node_modules/
 npm-debug.log*

@@ -1,0 +1,148 @@
+{
+  "id": "org.nuvio.regionalcatalog",
+  "version": "1.0.0",
+  "name": "Nuvio Regional Catalog · Tamil Movies Only",
+  "description": "Tamil movies only across Popular, Top Rated, Recently OTT Released, and genres.",
+  "resources": [
+    "catalog"
+  ],
+  "types": [
+    "movie"
+  ],
+  "idPrefixes": [
+    "tmdb:"
+  ],
+  "catalogs": [
+    {
+      "type": "movie",
+      "id": "regional.movie.ta.popular",
+      "name": "Tamil · Popular Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ta.top_rated",
+      "name": "Tamil · Top Rated Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ta.new",
+      "name": "Tamil · Recently OTT Released Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ta.genre.28",
+      "name": "Tamil · Action Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ta.genre.12",
+      "name": "Tamil · Adventure Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ta.genre.16",
+      "name": "Tamil · Animation Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ta.genre.35",
+      "name": "Tamil · Comedy Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ta.genre.80",
+      "name": "Tamil · Crime Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ta.genre.99",
+      "name": "Tamil · Documentary Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ta.genre.18",
+      "name": "Tamil · Drama Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ta.genre.10751",
+      "name": "Tamil · Family Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ta.genre.14",
+      "name": "Tamil · Fantasy Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ta.genre.36",
+      "name": "Tamil · History Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ta.genre.27",
+      "name": "Tamil · Horror Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ta.genre.10402",
+      "name": "Tamil · Music Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ta.genre.9648",
+      "name": "Tamil · Mystery Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ta.genre.10749",
+      "name": "Tamil · Romance Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ta.genre.878",
+      "name": "Tamil · Science Fiction Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ta.genre.53",
+      "name": "Tamil · Thriller Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ta.genre.10752",
+      "name": "Tamil · War Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ta.genre.37",
+      "name": "Tamil · Western Movies",
+      "pageSize": 60
+    }
+  ],
+  "behaviorHints": {
+    "adult": false,
+    "configurable": true,
+    "configurationRequired": false
+  }
+}

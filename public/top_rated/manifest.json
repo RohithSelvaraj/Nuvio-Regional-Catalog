@@ -1,0 +1,71 @@
+{
+  "id": "org.nuvio.regionalcatalog",
+  "version": "1.0.0",
+  "name": "Nuvio Regional Catalog · Top Rated",
+  "description": "Top rated regional Indian movies & series.",
+  "resources": [
+    "catalog"
+  ],
+  "types": [
+    "movie",
+    "series"
+  ],
+  "idPrefixes": [
+    "tmdb:"
+  ],
+  "catalogs": [
+    {
+      "type": "movie",
+      "id": "regional.movie.ta.top_rated",
+      "name": "Tamil · Top Rated Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ta.top_rated",
+      "name": "Tamil · Top Rated Series",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.te.top_rated",
+      "name": "Telugu · Top Rated Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.te.top_rated",
+      "name": "Telugu · Top Rated Series",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ml.top_rated",
+      "name": "Malayalam · Top Rated Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ml.top_rated",
+      "name": "Malayalam · Top Rated Series",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.kn.top_rated",
+      "name": "Kannada · Top Rated Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.kn.top_rated",
+      "name": "Kannada · Top Rated Series",
+      "pageSize": 60
+    }
+  ],
+  "behaviorHints": {
+    "adult": false,
+    "configurable": true,
+    "configurationRequired": false
+  }
+}

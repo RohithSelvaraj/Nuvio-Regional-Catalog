@@ -1,0 +1,148 @@
+{
+  "id": "org.nuvio.regionalcatalog",
+  "version": "1.0.0",
+  "name": "Nuvio Regional Catalog · Kannada Movies Only",
+  "description": "Kannada movies only across Popular, Top Rated, Recently OTT Released, and genres.",
+  "resources": [
+    "catalog"
+  ],
+  "types": [
+    "movie"
+  ],
+  "idPrefixes": [
+    "tmdb:"
+  ],
+  "catalogs": [
+    {
+      "type": "movie",
+      "id": "regional.movie.kn.popular",
+      "name": "Kannada · Popular Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.kn.top_rated",
+      "name": "Kannada · Top Rated Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.kn.new",
+      "name": "Kannada · Recently OTT Released Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.kn.genre.28",
+      "name": "Kannada · Action Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.kn.genre.12",
+      "name": "Kannada · Adventure Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.kn.genre.16",
+      "name": "Kannada · Animation Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.kn.genre.35",
+      "name": "Kannada · Comedy Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.kn.genre.80",
+      "name": "Kannada · Crime Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.kn.genre.99",
+      "name": "Kannada · Documentary Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.kn.genre.18",
+      "name": "Kannada · Drama Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.kn.genre.10751",
+      "name": "Kannada · Family Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.kn.genre.14",
+      "name": "Kannada · Fantasy Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.kn.genre.36",
+      "name": "Kannada · History Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.kn.genre.27",
+      "name": "Kannada · Horror Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.kn.genre.10402",
+      "name": "Kannada · Music Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.kn.genre.9648",
+      "name": "Kannada · Mystery Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.kn.genre.10749",
+      "name": "Kannada · Romance Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.kn.genre.878",
+      "name": "Kannada · Science Fiction Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.kn.genre.53",
+      "name": "Kannada · Thriller Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.kn.genre.10752",
+      "name": "Kannada · War Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.kn.genre.37",
+      "name": "Kannada · Western Movies",
+      "pageSize": 60
+    }
+  ],
+  "behaviorHints": {
+    "adult": false,
+    "configurable": true,
+    "configurationRequired": false
+  }
+}

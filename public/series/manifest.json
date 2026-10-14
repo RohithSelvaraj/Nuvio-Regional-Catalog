@@ -1,0 +1,478 @@
+{
+  "id": "org.nuvio.regionalcatalog",
+  "version": "1.0.0",
+  "name": "Nuvio Regional Catalog · TV Series Only",
+  "description": "Regional Indian TV series across Tamil, Telugu, Malayalam and Kannada.",
+  "resources": [
+    "catalog"
+  ],
+  "types": [
+    "series"
+  ],
+  "idPrefixes": [
+    "tmdb:"
+  ],
+  "catalogs": [
+    {
+      "type": "series",
+      "id": "regional.series.ta.popular",
+      "name": "Tamil · Popular Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ta.top_rated",
+      "name": "Tamil · Top Rated Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ta.new",
+      "name": "Tamil · Recently Released Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ta.genre.10759",
+      "name": "Tamil · Action & Adventure Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ta.genre.16",
+      "name": "Tamil · Animation Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ta.genre.35",
+      "name": "Tamil · Comedy Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ta.genre.80",
+      "name": "Tamil · Crime Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ta.genre.99",
+      "name": "Tamil · Documentary Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ta.genre.18",
+      "name": "Tamil · Drama Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ta.genre.10751",
+      "name": "Tamil · Family Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ta.genre.10762",
+      "name": "Tamil · Kids Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ta.genre.9648",
+      "name": "Tamil · Mystery Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ta.genre.10763",
+      "name": "Tamil · News Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ta.genre.10764",
+      "name": "Tamil · Reality Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ta.genre.10765",
+      "name": "Tamil · Sci-Fi & Fantasy Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ta.genre.10766",
+      "name": "Tamil · Soap Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ta.genre.10767",
+      "name": "Tamil · Talk Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ta.genre.10768",
+      "name": "Tamil · War & Politics Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ta.genre.37",
+      "name": "Tamil · Western Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.te.popular",
+      "name": "Telugu · Popular Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.te.top_rated",
+      "name": "Telugu · Top Rated Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.te.new",
+      "name": "Telugu · Recently Released Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.te.genre.10759",
+      "name": "Telugu · Action & Adventure Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.te.genre.16",
+      "name": "Telugu · Animation Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.te.genre.35",
+      "name": "Telugu · Comedy Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.te.genre.80",
+      "name": "Telugu · Crime Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.te.genre.99",
+      "name": "Telugu · Documentary Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.te.genre.18",
+      "name": "Telugu · Drama Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.te.genre.10751",
+      "name": "Telugu · Family Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.te.genre.10762",
+      "name": "Telugu · Kids Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.te.genre.9648",
+      "name": "Telugu · Mystery Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.te.genre.10763",
+      "name": "Telugu · News Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.te.genre.10764",
+      "name": "Telugu · Reality Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.te.genre.10765",
+      "name": "Telugu · Sci-Fi & Fantasy Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.te.genre.10766",
+      "name": "Telugu · Soap Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.te.genre.10767",
+      "name": "Telugu · Talk Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.te.genre.10768",
+      "name": "Telugu · War & Politics Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.te.genre.37",
+      "name": "Telugu · Western Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ml.popular",
+      "name": "Malayalam · Popular Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ml.top_rated",
+      "name": "Malayalam · Top Rated Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ml.new",
+      "name": "Malayalam · Recently Released Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ml.genre.10759",
+      "name": "Malayalam · Action & Adventure Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ml.genre.16",
+      "name": "Malayalam · Animation Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ml.genre.35",
+      "name": "Malayalam · Comedy Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ml.genre.80",
+      "name": "Malayalam · Crime Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ml.genre.99",
+      "name": "Malayalam · Documentary Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ml.genre.18",
+      "name": "Malayalam · Drama Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ml.genre.10751",
+      "name": "Malayalam · Family Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ml.genre.10762",
+      "name": "Malayalam · Kids Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ml.genre.9648",
+      "name": "Malayalam · Mystery Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ml.genre.10763",
+      "name": "Malayalam · News Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ml.genre.10764",
+      "name": "Malayalam · Reality Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ml.genre.10765",
+      "name": "Malayalam · Sci-Fi & Fantasy Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ml.genre.10766",
+      "name": "Malayalam · Soap Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ml.genre.10767",
+      "name": "Malayalam · Talk Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ml.genre.10768",
+      "name": "Malayalam · War & Politics Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ml.genre.37",
+      "name": "Malayalam · Western Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.kn.popular",
+      "name": "Kannada · Popular Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.kn.top_rated",
+      "name": "Kannada · Top Rated Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.kn.new",
+      "name": "Kannada · Recently Released Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.kn.genre.10759",
+      "name": "Kannada · Action & Adventure Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.kn.genre.16",
+      "name": "Kannada · Animation Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.kn.genre.35",
+      "name": "Kannada · Comedy Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.kn.genre.80",
+      "name": "Kannada · Crime Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.kn.genre.99",
+      "name": "Kannada · Documentary Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.kn.genre.18",
+      "name": "Kannada · Drama Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.kn.genre.10751",
+      "name": "Kannada · Family Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.kn.genre.10762",
+      "name": "Kannada · Kids Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.kn.genre.9648",
+      "name": "Kannada · Mystery Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.kn.genre.10763",
+      "name": "Kannada · News Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.kn.genre.10764",
+      "name": "Kannada · Reality Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.kn.genre.10765",
+      "name": "Kannada · Sci-Fi & Fantasy Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.kn.genre.10766",
+      "name": "Kannada · Soap Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.kn.genre.10767",
+      "name": "Kannada · Talk Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.kn.genre.10768",
+      "name": "Kannada · War & Politics Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.kn.genre.37",
+      "name": "Kannada · Western Series",
+      "pageSize": 60
+    }
+  ],
+  "behaviorHints": {
+    "adult": false,
+    "configurable": true,
+    "configurationRequired": false
+  }
+}

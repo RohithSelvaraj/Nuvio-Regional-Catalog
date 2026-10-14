@@ -1,0 +1,136 @@
+{
+  "id": "org.nuvio.regionalcatalog",
+  "version": "1.0.0",
+  "name": "Nuvio Regional Catalog · Tamil Series Only",
+  "description": "Tamil TV series only across Popular, Top Rated, Recent, and genres.",
+  "resources": [
+    "catalog"
+  ],
+  "types": [
+    "series"
+  ],
+  "idPrefixes": [
+    "tmdb:"
+  ],
+  "catalogs": [
+    {
+      "type": "series",
+      "id": "regional.series.ta.popular",
+      "name": "Tamil · Popular Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ta.top_rated",
+      "name": "Tamil · Top Rated Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ta.new",
+      "name": "Tamil · Recently Released Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ta.genre.10759",
+      "name": "Tamil · Action & Adventure Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ta.genre.16",
+      "name": "Tamil · Animation Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ta.genre.35",
+      "name": "Tamil · Comedy Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ta.genre.80",
+      "name": "Tamil · Crime Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ta.genre.99",
+      "name": "Tamil · Documentary Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ta.genre.18",
+      "name": "Tamil · Drama Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ta.genre.10751",
+      "name": "Tamil · Family Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ta.genre.10762",
+      "name": "Tamil · Kids Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ta.genre.9648",
+      "name": "Tamil · Mystery Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ta.genre.10763",
+      "name": "Tamil · News Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ta.genre.10764",
+      "name": "Tamil · Reality Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ta.genre.10765",
+      "name": "Tamil · Sci-Fi & Fantasy Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ta.genre.10766",
+      "name": "Tamil · Soap Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ta.genre.10767",
+      "name": "Tamil · Talk Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ta.genre.10768",
+      "name": "Tamil · War & Politics Series",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ta.genre.37",
+      "name": "Tamil · Western Series",
+      "pageSize": 60
+    }
+  ],
+  "behaviorHints": {
+    "adult": false,
+    "configurable": true,
+    "configurationRequired": false
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "id": "org.nuvio.regionalcatalog",
+  "version": "1.0.0",
+  "name": "Nuvio Regional Catalog · Popular Hits",
+  "description": "Popular Tamil, Telugu, Malayalam and Kannada movies & series.",
+  "resources": [
+    "catalog"
+  ],
+  "types": [
+    "movie",
+    "series"
+  ],
+  "idPrefixes": [
+    "tmdb:"
+  ],
+  "catalogs": [
+    {
+      "type": "movie",
+      "id": "regional.movie.ta.popular",
+      "name": "Tamil · Popular Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ta.popular",
+      "name": "Tamil · Popular Series",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.te.popular",
+      "name": "Telugu · Popular Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.te.popular",
+      "name": "Telugu · Popular Series",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.ml.popular",
+      "name": "Malayalam · Popular Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.ml.popular",
+      "name": "Malayalam · Popular Series",
+      "pageSize": 60
+    },
+    {
+      "type": "movie",
+      "id": "regional.movie.kn.popular",
+      "name": "Kannada · Popular Movies",
+      "pageSize": 60
+    },
+    {
+      "type": "series",
+      "id": "regional.series.kn.popular",
+      "name": "Kannada · Popular Series",
+      "pageSize": 60
+    }
+  ],
+  "behaviorHints": {
+    "adult": false,
+    "configurable": true,
+    "configurationRequired": false
+  }
+}

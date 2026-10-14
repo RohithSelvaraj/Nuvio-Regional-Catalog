@@ -1,0 +1,192 @@
+[
+  {
+    "id": "regional.south-indian",
+    "title": "🇮🇳 South Indian Mix",
+    "showAllTab": true,
+    "viewMode": "FOLLOW_LAYOUT",
+    "pinToTop": true,
+    "focusGlowEnabled": true,
+    "folders": [
+      {
+        "id": "regional.mix.movie.popular",
+        "title": "Popular South Indian Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.ta.popular",
+            "type": "movie"
+          },
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.te.popular",
+            "type": "movie"
+          },
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.ml.popular",
+            "type": "movie"
+          },
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.kn.popular",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "🔥"
+      },
+      {
+        "id": "regional.mix.movie.top_rated",
+        "title": "Top Rated South Indian Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.ta.top_rated",
+            "type": "movie"
+          },
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.te.top_rated",
+            "type": "movie"
+          },
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.ml.top_rated",
+            "type": "movie"
+          },
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.kn.top_rated",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "⭐"
+      },
+      {
+        "id": "regional.mix.movie.new",
+        "title": "Latest South Indian Movies",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.ta.new",
+            "type": "movie"
+          },
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.te.new",
+            "type": "movie"
+          },
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.ml.new",
+            "type": "movie"
+          },
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.movie.kn.new",
+            "type": "movie"
+          }
+        ],
+        "coverEmoji": "🆕"
+      },
+      {
+        "id": "regional.mix.series.popular",
+        "title": "Popular South Indian Series",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.ta.popular",
+            "type": "series"
+          },
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.te.popular",
+            "type": "series"
+          },
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.ml.popular",
+            "type": "series"
+          },
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.kn.popular",
+            "type": "series"
+          }
+        ],
+        "coverEmoji": "🔥"
+      },
+      {
+        "id": "regional.mix.series.top_rated",
+        "title": "Top Rated South Indian Series",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.ta.top_rated",
+            "type": "series"
+          },
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.te.top_rated",
+            "type": "series"
+          },
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.ml.top_rated",
+            "type": "series"
+          },
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.kn.top_rated",
+            "type": "series"
+          }
+        ],
+        "coverEmoji": "⭐"
+      },
+      {
+        "id": "regional.mix.series.new",
+        "title": "Latest South Indian Series",
+        "tileShape": "POSTER",
+        "hideTitle": false,
+        "focusGifEnabled": false,
+        "catalogSources": [
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.ta.new",
+            "type": "series"
+          },
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.te.new",
+            "type": "series"
+          },
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.ml.new",
+            "type": "series"
+          },
+          {
+            "addonId": "org.nuvio.regionalcatalog",
+            "catalogId": "regional.series.kn.new",
+            "type": "series"
+          }
+        ],
+        "coverEmoji": "🆕"
+      }
+    ]
+  }
+]
