@@ -57,7 +57,10 @@ function buildUrl(endpoint, params) {
 
 async function tmdbGet(endpoint, params) {
   const url = buildUrl(endpoint, params);
-  const headers = { accept: 'application/json' };
+  const headers = {
+    accept: 'application/json',
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36'
+  };
   if (credentials.kind === 'bearer') headers.Authorization = `Bearer ${credentials.value}`;
 
   for (let attempt = 0; attempt < 5; attempt++) {

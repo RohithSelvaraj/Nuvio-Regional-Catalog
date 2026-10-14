@@ -66,7 +66,10 @@ async function tmdbFetch(endpoint, params, credentials) {
     if (value !== undefined && value !== null && value !== '') url.searchParams.set(key, String(value));
   }
 
-  const headers = { accept: 'application/json' };
+  const headers = {
+    accept: 'application/json',
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36'
+  };
   if (credentials?.kind === 'bearer') headers.Authorization = `Bearer ${credentials.value}`;
 
   for (let attempt = 0; attempt < 3; attempt++) {
